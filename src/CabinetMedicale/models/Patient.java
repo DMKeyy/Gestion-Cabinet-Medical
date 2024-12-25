@@ -3,6 +3,7 @@ package CabinetMedicale.models;
 import java.util.*;
 
 public class Patient {
+    Scanner sc = new Scanner(System.in);
 
     private String numeroDeTel;
     private String nom;
@@ -138,7 +139,9 @@ public class Patient {
     }
 
 
-    
+    public void setDateDeNaissance(String dateDeNaissance) {
+        DateDeNaissance = dateDeNaissance;
+    }
 
 
     @Override
@@ -155,26 +158,40 @@ public class Patient {
     }
     
     public void ajouterAntecedentMedical (){
-        Scanner sc=new Scanner(System.in);
-        System.out.println("entrez l'antecedant Medical du patient");
-        this.AntecedentsMedicaux.add(sc.nextLine());
-        sc.close();
+        System.out.println("Entrer l'antecedent medical a ajouter : ");
+        String Antecedent = sc.nextLine();
+        AntecedentsMedicaux.add(Antecedent);
+    }
+
+    public void modifierAntecedentMedical(){
+        System.out.println("Entrer l'antecedent medical a modifier : ");
+        String AntecedentAModifier = sc.nextLine();
+        System.out.println("Entrer le nouveau antecedent medical : ");
+        String NouvelAntecedent = sc.nextLine();
+
+        for (String antecedent : AntecedentsMedicaux) {
+            if (antecedent.equalsIgnoreCase(AntecedentAModifier)) {
+                AntecedentsMedicaux.set(AntecedentsMedicaux.indexOf(antecedent), NouvelAntecedent);
+            }
+        }
     }
 
     public void ajouterAntecedentChirurgical (){
-        Scanner sc=new Scanner(System.in);
-        System.out.println("entrez l'antecedant chirurgical du patient");
-        this.AntecedentsChirurgicaux.add(sc.nextLine());
-        sc.close();
+        System.out.println("Entrer l'antecedent chirurgical a ajouter : ");
+        String Antecedent = sc.nextLine();
+        AntecedentsChirurgicaux.add(Antecedent);
     }
 
-    public void SupprimerAntecedentMedical(int n){
-        AntecedentsMedicaux.remove(n-1);
-    }
+    public void modifierAntecedentChirurgical(){
+        System.out.println("Entrer l'antecedent chirurgical a modifier : ");
+        String AntecedentAModifier = sc.nextLine();
+        System.out.println("Entrer le nouveau antecedent cirurgical : ");
+        String NouvelAntecedent = sc.nextLine();
 
-    public void SupprimerAntecedentChirurgicaux(int n){
-        AntecedentsChirurgicaux.remove(n-1);
-    }
-
-    
+        for (String antecedent : AntecedentsChirurgicaux) {
+            if (antecedent.equalsIgnoreCase(AntecedentAModifier)) {
+                AntecedentsMedicaux.set(AntecedentsMedicaux.indexOf(antecedent), NouvelAntecedent);
+            }
+        }
+    }    
 }
