@@ -18,6 +18,8 @@ public class Patient {
     private int numeroDossier;
     private static int nbDossier;
 
+    private DossierMedical dossierMedical;
+
     public Patient(String numeroDeTel, String nom, String prenom,String DateDeNaissance, double poid, double taille, String adresse,ArrayList<String> AntecedentsMedicaux,ArrayList<String> AntecedentsChirurgicaux) {
         this.numeroDeTel = numeroDeTel;
         this.nom = nom;
@@ -31,9 +33,16 @@ public class Patient {
         this.AntecedentsChirurgicaux=AntecedentsChirurgicaux;
         this.AntecedentsMedicaux = AntecedentsMedicaux;
 
+        this.dossierMedical = new DossierMedical(this);
 
         this.numeroDossier=nbDossier+1;
         Patient.nbDossier=nbDossier+1;
+    }
+
+
+
+    public DossierMedical getDossierMedical() {
+        return dossierMedical;
     }
 
 
@@ -144,13 +153,18 @@ public class Patient {
     }
 
 
+    
+
+
     @Override
     public String toString() {
         return "Patient [numeroDeTel=" + numeroDeTel + ", nom=" + nom + ", prenom=" + prenom + ", DateDeNaissance="
                 + DateDeNaissance + ", poid=" + poid + ", taille=" + taille + ", adresse=" + adresse
                 + ", AntecedentsMedicaux=" + AntecedentsMedicaux + ", AntecedentsChirurgicaux="
-                + AntecedentsChirurgicaux + ", numeroDossier=" + numeroDossier + "]";
+                + AntecedentsChirurgicaux + ", " + dossierMedical
+                +" , numeroDossier=" + numeroDossier +"]";
     }
+
 
 
     public void afficherinfo(){

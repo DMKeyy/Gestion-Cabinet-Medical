@@ -4,7 +4,12 @@ public class consultation {
     private String Compterendu ;
     private Ordonnance ordonnance;
 
+
     
+    public consultation() {
+    }
+
+
     public consultation(String compterendu, Ordonnance ordonnance) {
         Compterendu = compterendu;
         this.ordonnance = ordonnance;
@@ -33,7 +38,7 @@ public class consultation {
 
     @Override
     public String toString() {
-        return "consultation [Compterendu=" + Compterendu + ", ordonnance=" + ordonnance + "]";
+        return "[Compterendu=" + Compterendu + ", ordonnance=" + ordonnance + "]";
     }
 
     

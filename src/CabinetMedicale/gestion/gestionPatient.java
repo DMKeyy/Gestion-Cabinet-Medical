@@ -1,6 +1,5 @@
 package CabinetMedicale.gestion;
 
-import java.lang.reflect.Array;
 import java.util.ArrayList;
 import java.util.Scanner;
 
@@ -18,26 +17,27 @@ public class gestionPatient {
         public void GestionPatient() {
             System.out.println("Voulez-vous : ");
             System.out.println("1 . Ajouter un Patient");
-            System.out.println("2 . Modifier un Patient");
+            System.out.println("2 . Modifier les information du Patient");
             System.out.println("3 . Supprimer un Patient");
-            System.out.println("4 . Afficher les Patients");
+            System.out.println("4 . Afficher les informations des Patients");
+            System.out.println("5 . Afficher les informations d'un seul patient");
+            System.out.println("6 . Retour");
     
             int choix = 0;
     
             do {
-                System.out.println("Entrer votre choix: (1-4)");
                 try {
                     choix = sc.nextInt();
+                    sc.nextLine();
+                if (choix < 1 && choix > 6) {
 
-                if (choix < 1 && choix > 4) {
-
-                    System.out.println("Erreur: le nombre doit etre entre 1 et 4.");
+                    System.out.println("Erreur: le nombre doit etre entre 1 et 6.");
                 }
             } catch (NumberFormatException e) {
                 System.out.println("Erreur: Veuiller entrer un entier.");
             }
 
-        } while (choix < 1 || choix > 4);
+        } while (choix < 1 || choix > 6);
 
         switch (choix) {
             case 1:
@@ -47,10 +47,15 @@ public class gestionPatient {
                 modifierPatient();
                 break;
             case 3:
-                //supprimerPatient();
+                supprimerPatient();
                 break;
             case 4:
-                //afficherPatients();
+                afficherPatients();
+                break;
+            case 5:
+                selectionnerPatient().afficherinfo();
+                break;
+            case 6:
                 break;
         }
     }
@@ -105,6 +110,7 @@ public class gestionPatient {
         
         patients.add(new Patient(numeroDeTel, nom, prenom, DateDeNaissance, poid, taille, adresse, AntecedentsMedicaux, AntecedentsChirurgicaux));
     }
+
 
     public void modifierPatient(){
 
@@ -293,6 +299,7 @@ public class gestionPatient {
         }
     }
 
+
     public void modifierAntecedentChirurgical(Patient patient){
         System.out.println("Voulez-vous ajouter, modifer ou supprimer un antecedent chirurgical : ");
         System.out.println("1 . Ajouter");
@@ -338,6 +345,7 @@ public class gestionPatient {
         }
     }
 
+
     public void modifierNumeroDeTel(Patient patient){
         System.out.println("Entrer le nouveau numero de telephone : ");
         String numeroDeTel = sc.nextLine();
@@ -346,6 +354,21 @@ public class gestionPatient {
         }
         else {
             System.out.println("Erreur: Veuiller entrer un nombre.");
+        }
+    }
+
+
+    public void supprimerPatient(){
+        Patient patient = selectionnerPatient();
+        if (patient != null) {
+            patients.remove(patient);
+            System.out.println("Patient supprimé.");
+        }
+    }
+
+    public void afficherPatients(){
+        for (Patient patient : patients) {
+            patient.afficherinfo();
         }
     }
 }

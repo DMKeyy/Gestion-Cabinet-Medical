@@ -1,18 +1,18 @@
-package CabinetMedicale.gestion;
+package CabinetMedicale.models;
 
 import java.util.ArrayList;
 
-import CabinetMedicale.models.Patient;
-import CabinetMedicale.models.consultation;
-
-public class suiviDossierMedical {
+public class DossierMedical {
+    
     private Patient patient;
     private ArrayList<consultation> consultations;
+    private String etatPatient;
 
+    
 
-    public suiviDossierMedical(Patient patient, ArrayList<consultation> consultations) {
+    public DossierMedical(Patient patient) {
         this.patient = patient;
-        this.consultations = consultations;
+        this.consultations = new ArrayList<consultation>();
     }
 
 
@@ -36,19 +36,31 @@ public class suiviDossierMedical {
     }
 
 
+    
+
     @Override
     public String toString() {
-        return "suiviDossierMedical [patient=" + patient + ", consultations=" + consultations + "]";
+        return "DossierMedical [patient=" + patient.getNom() +" "+ patient.getPrenom() + ", consultations=" + consultations + ", etatPatient="
+                + etatPatient + "]";
     }
+
 
     public void ajouterConsultation (consultation Consultation){
         this.consultations.add(Consultation);
         }
 
     public void AfficherDossierMedical (){
-        for (consultation Consultation : consultations) {
-            System.out.println(Consultation.toString());
-        }
+        System.out.println(toString());
+    }
+
+
+    public String getEtatPatient() {
+        return etatPatient;
+    }
+
+
+    public void setEtatPatient(String etatPatient) {
+        this.etatPatient = etatPatient;
     }
     
 

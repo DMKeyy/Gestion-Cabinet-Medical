@@ -22,28 +22,27 @@ public class gestionRDV {
 
 
     public void GestionRDV(){
-        Scanner sc = new Scanner(System.in);
         System.out.println("Voulez-vous : ");
         System.out.println("1 . Ajouter un Rendez-vous");
         System.out.println("2 . Annuler un Rendez-vous");
         System.out.println("3 . Modifier un Rend-vous ");
         System.out.println("4 . Afficher les Rendez-vous");
+        System.out.println("5 . Retour");
         
         int choix=0;
         do {
-            System.out.println("Entrer votre choix: (1-4)");
             try {
                 choix = sc.nextInt();
 
-                if (choix < 1 && choix > 4) {
+                if (choix < 1 && choix > 5) {
                     
-                    System.out.println("Erreur: le nombre doit etre entre 1 et 4.");
+                    System.out.println("Erreur: le nombre doit etre entre 1 et 5.");
                 }
             } catch (NumberFormatException e) {
                 System.out.println("Erreur: Veuiller entrer un entier.");
             }
 
-        } while (choix < 1 || choix > 4);
+        } while (choix < 1 || choix > 5);
 
         switch (choix) {
             case 1:
@@ -59,10 +58,9 @@ public class gestionRDV {
             case 4:
             AfficherRDVs();
                 break;
-            default:
+            case 5:
                 break;
         }
-        sc.close();
     }
 
     public void RemplireDate (RendezVous RDV){
