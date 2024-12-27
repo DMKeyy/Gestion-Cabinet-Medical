@@ -79,6 +79,7 @@ public class gestionDossierMedical {
             }
             System.out.println("Entrer le nom du médecin : ");
             ordonnance.setNomMedecin(sc.nextLine());
+            Consultation.setOrdonnance(ordonnance);
         }
         else {
             Consultation.setOrdonnance(null);

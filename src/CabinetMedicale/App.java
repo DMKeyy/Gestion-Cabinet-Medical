@@ -1,6 +1,7 @@
 package CabinetMedicale;
 
 
+import java.util.Locale;
 import java.util.Scanner;
 
 import CabinetMedicale.gestion.gestionDossierMedical;
@@ -12,6 +13,7 @@ public class App {
     public static void main(String[] args) throws Exception {
 
         Scanner sc = new Scanner(System.in);
+        sc.useLocale(Locale.US); //Force '.' as the decimal separator
 
         gestionRDV gestionRDV = new gestionRDV();
         gestionPatient gestionPatient = new gestionPatient();

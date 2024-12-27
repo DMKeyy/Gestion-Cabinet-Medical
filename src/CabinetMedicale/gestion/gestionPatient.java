@@ -66,8 +66,6 @@ public class gestionPatient {
 
     public void ajouterPatient() {
 
-        System.out.println("Entrer le numero de telephone du patient: ");
-        String numeroDeTel = sc.nextLine();
 
         System.out.println("Entrer le nom du patient: ");
         String nom = sc.nextLine();
@@ -78,14 +76,54 @@ public class gestionPatient {
         System.out.println("Entrer la date de naissance du patient: ");
         String DateDeNaissance = sc.nextLine();
 
+        System.out.println("Entrer le numero de telephone du patient: ");
+        String numeroDeTel = sc.nextLine();
+
         System.out.println("Entrer l'adresse du patient: ");
         String adresse = sc.nextLine();
 
-        System.out.println("Entrer le poid du patient: ");
-        double poid = sc.nextDouble();
+        System.out.println("Entrer le poid du patient: (en kg XX.xx)");
 
-        System.out.println("Entrer la taille du patient: ");
-        double taille = sc.nextDouble();
+        double poid=0;
+            do{
+                try {
+                    poid = sc.nextDouble();
+                    sc.nextLine();
+                    if (poid > 0) {
+                        break;
+                    } else {
+                        System.out.println("Erreur: le poids doit être positif.");
+                    }
+                } catch (Exception e) {
+                    System.out.println("Erreur: Veuillez entrer un nombre valide.");
+                    sc.nextLine();
+                    poid=0;
+                }
+            
+            }while(poid<=0);
+
+        System.out.println("Entrer la taille du patient: (en mettres X.xx)");
+        double taille =0;
+
+
+        do{
+            try {
+                taille = sc.nextDouble();
+                sc.nextLine();
+                if (taille > 0) {
+                    break;
+                } else {
+                    System.out.println("Erreur: la taille doit être positif.");
+                }
+            } catch (Exception e) {
+                System.out.println("Erreur: Veuillez entrer un nombre valide.");
+                sc.nextLine();
+                taille=0;
+            }
+        
+        }while(taille<=0);
+
+
 
         boolean fin = false;
         

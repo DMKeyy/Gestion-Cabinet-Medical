@@ -28,7 +28,7 @@ public class gestionRDV {
         System.out.println("Voulez-vous : ");
         System.out.println("1 . Ajouter un Rendez-vous");
         System.out.println("2 . Annuler un Rendez-vous");
-        System.out.println("3 . Modifier un Rend-vous ");
+        System.out.println("3 . Modifier un Rendez-vous ");
         System.out.println("4 . Afficher les Rendez-vous");
         System.out.println("5 . Retour");
         
@@ -36,7 +36,7 @@ public class gestionRDV {
         do {
             try {
                 choix = sc.nextInt();
-
+                sc.nextLine();
                 if (choix < 1 && choix > 5) {
                     
                     System.out.println("Erreur: le nombre doit etre entre 1 et 5.");
@@ -50,13 +50,12 @@ public class gestionRDV {
         switch (choix) {
             case 1:
             ajouterRDV();
-            modiferRDV();
-            AfficherRDVs();
                 break;
             case 2:
             annulerRDV();
                 break;
             case 3:
+            modiferRDV();
                 break;
             case 4:
             AfficherRDVs();
@@ -69,11 +68,11 @@ public class gestionRDV {
 
     public void RemplireDate (RendezVous RDV){
         int jour,mois,annee,heure,minute;
-        System.out.println("Entrer la date et l'heure du rendez vous : ");
-        System.out.println("jour :");       jour=sc.nextInt();      sc.nextLine(); 
-        System.out.println("Mois :");       mois=sc.nextInt();      sc.nextLine(); 
-        System.out.println("heure :");      heure=sc.nextInt();     sc.nextLine(); 
-        System.out.println("Minute :");     minute=sc.nextInt();    sc.nextLine(); 
+        System.out.println("Entrer la date du rendez vous : ");
+        System.out.println("jour : (1-31)");       jour=sc.nextInt();      sc.nextLine(); 
+        System.out.println("Mois : (1-12)");       mois=sc.nextInt();      sc.nextLine(); 
+        System.out.println("heure : (0-24)");      heure=sc.nextInt();     sc.nextLine(); 
+        System.out.println("Minute :(0-60)");     minute=sc.nextInt();    sc.nextLine(); 
         System.out.println("Annee :");      annee=sc.nextInt();     sc.nextLine(); 
         
         RDV.setDateHeure(LocalDateTime.of(annee, mois, jour, heure, minute));
