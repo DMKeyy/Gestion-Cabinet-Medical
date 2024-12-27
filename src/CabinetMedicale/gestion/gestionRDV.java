@@ -22,6 +22,9 @@ public class gestionRDV {
 
 
     public void GestionRDV(){
+
+        int choix;
+        do{
         System.out.println("Voulez-vous : ");
         System.out.println("1 . Ajouter un Rendez-vous");
         System.out.println("2 . Annuler un Rendez-vous");
@@ -29,7 +32,7 @@ public class gestionRDV {
         System.out.println("4 . Afficher les Rendez-vous");
         System.out.println("5 . Retour");
         
-        int choix=0;
+        choix=0;
         do {
             try {
                 choix = sc.nextInt();
@@ -61,6 +64,7 @@ public class gestionRDV {
             case 5:
                 break;
         }
+    }while(choix!=5);
     }
 
     public void RemplireDate (RendezVous RDV){

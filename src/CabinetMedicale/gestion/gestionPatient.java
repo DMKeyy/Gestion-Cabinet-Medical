@@ -15,6 +15,8 @@ public class gestionPatient {
         }
         
         public void GestionPatient() {
+            int choix;
+            do{
             System.out.println("Voulez-vous : ");
             System.out.println("1 . Ajouter un Patient");
             System.out.println("2 . Modifier les information du Patient");
@@ -23,7 +25,7 @@ public class gestionPatient {
             System.out.println("5 . Afficher les informations d'un seul patient");
             System.out.println("6 . Retour");
     
-            int choix = 0;
+            choix = 0;
     
             do {
                 try {
@@ -58,6 +60,7 @@ public class gestionPatient {
             case 6:
                 break;
         }
+    }while(choix!=6);
     }
 
 

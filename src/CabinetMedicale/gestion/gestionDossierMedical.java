@@ -13,14 +13,16 @@ public class gestionDossierMedical {
 
     Patient patient;
     public void GestionDossierMedical (Patient patient){
-
+        
+        int choix;
+        do{
         System.out.println("Gestion du dossier médical : (1-3)");
         System.out.println("1 . Ajouter une consultation");
         System.out.println("2 . Modifier l'etat medical du patient");
         System.out.println("3 . Afficher le dossier médical");
         System.out.println("4 . Retour");
 
-        int choix = 0;
+        choix = 0;
         do {
             try {
                 choix = sc.nextInt();
@@ -50,7 +52,7 @@ public class gestionDossierMedical {
             default:
                 break;
         }
-
+    }while(choix!=4);
     }
 
     public void AjouterConsultation (DossierMedical dossierMedical,Patient patient){
