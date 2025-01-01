@@ -85,10 +85,14 @@ public class Ordonnance {
 
 
 
-    @Override
-    public String toString() {
-        return "Ordonnance [ Nom : " + nom + ", Prenom : " + prenom + ", Medicament : " + medicament + ", Doses : " + doses
-                + ", date : " + dateOrdonnance + ", Nom Medecin : " + nomMedecin + " ]";
+    public void generateDocument() {
+        System.out.println("---Ordonnance Médicale---\n");
+        System.out.println("Date : " + dateOrdonnance + "\n");
+        System.out.println("Patient : " + nom + " "+ prenom + "\n" );
+        System.out.println("Docteur : " + nomMedecin + "\n");
+        for (String string : doses) {
+            System.out.println("Medicament : "+medicament.get(doses.indexOf(string))+"   "+string);
+        }
+        System.out.println("-------------------------\n");
     }
-
 }

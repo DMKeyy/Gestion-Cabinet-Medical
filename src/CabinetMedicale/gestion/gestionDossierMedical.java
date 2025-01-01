@@ -3,6 +3,7 @@ package CabinetMedicale.gestion;
 
 import java.util.Scanner;
 
+import CabinetMedicale.models.CertificatMedical;
 import CabinetMedicale.models.DossierMedical;
 import CabinetMedicale.models.Ordonnance;
 import CabinetMedicale.models.Patient;
@@ -71,28 +72,78 @@ public class gestionDossierMedical {
         String choix = sc.nextLine();
 
         if (choix.equals("O") || choix.equals("o")) {
-            Ordonnance ordonnance = new Ordonnance();
-
-            ordonnance.setNom(patient.getNom());
-            ordonnance.setPrenom(patient.getPrenom());
-
-            System.out.println("Entrer le nombre de traitements : ");
-            int nb = sc.nextInt();
-            sc.nextLine();
-            for (int i = 0; i < nb; i++) {
-                System.out.println("Entrer le nom du médicaments : ");
-                ordonnance.getMedicament().add(sc.nextLine());
-                System.out.println("Entrer la dose : ");
-                ordonnance.getDoses().add(sc.nextLine());
-            }
-            System.out.println("Entrer le nom du médecin : ");
-            ordonnance.setNomMedecin(sc.nextLine());
-            Consultation.setOrdonnance(ordonnance);
+            Consultation = AjouterOrdonnance(Consultation,patient);
         }
         else {
             Consultation.setOrdonnance(null);
         }
+
+        System.out.println("Voulez vous ajouter un certificat médical ? (O/N)");
+        choix = sc.nextLine();
+        if (choix.equals("O") || choix.equals("o")) {
+            Consultation = AjouterCertificatMedical(Consultation,patient);
+        }
+        else {
+            Consultation.setCertificatMedical(null);
+        }
+
         dossierMedical.ajouterConsultation(Consultation);
+    }
+
+
+    public consultation AjouterOrdonnance(consultation Consultation,Patient patient){
+        Ordonnance ordonnance = new Ordonnance();
+
+        ordonnance.setNom(patient.getNom());
+        ordonnance.setPrenom(patient.getPrenom());
+
+        System.out.println("Entrer le nombre de traitements : ");
+        int nb = sc.nextInt();
+        sc.nextLine();
+        for (int i = 0; i < nb; i++) {
+            System.out.println("Entrer le nom du médicaments : ");
+            ordonnance.getMedicament().add(sc.nextLine());
+            System.out.println("Entrer la dose : ");
+            ordonnance.getDoses().add(sc.nextLine());
+        }
+        System.out.println("Entrer le nom du médecin : ");
+        ordonnance.setNomMedecin(sc.nextLine());
+        Consultation.setOrdonnance(ordonnance);
+        return Consultation;
+    }
+
+
+    public consultation AjouterCertificatMedical(consultation Consultation,Patient patient){
+        CertificatMedical certificatMedical = new CertificatMedical();
+
+        System.out.println("Entrer le motif du certificat médical : ");
+        certificatMedical.setReason(sc.nextLine());
+        System.out.println("Entrer la durée de l'arrêt : xx jours");
+        int duree ;
+
+        do {
+            while (true) {
+                if (sc.hasNextInt()) {
+                    duree = sc.nextInt();
+                    if (duree<1) {
+                        System.out.println("La durée doit être supérieure à 0.");
+                    }
+                    break;
+                } else {
+                    System.out.println("Entré invalide . Entrez un entier supérieur à 0.");
+                    sc.next(); // Clear invalid input
+                }
+            }
+        } while (duree<1);
+        certificatMedical.setDuration(duree);
+
+        certificatMedical.setPatientName(patient.getNom()+" "+patient.getPrenom());
+        
+        System.out.println("Entrer le nom du médecin : ");
+        certificatMedical.setDoctorName(sc.nextLine());
+
+        Consultation.setCertificatMedical(certificatMedical);
+        return Consultation;
     }
 
     public void ModifierConsultation(DossierMedical dossierMedical){}

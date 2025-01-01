@@ -6,6 +6,7 @@ public class consultation {
     private LocalDate Date= LocalDate.now();
     private String etatpatient;
     private Ordonnance ordonnance;
+    private CertificatMedical certificatMedical;
 
 
     
@@ -13,9 +14,10 @@ public class consultation {
     }
 
 
-    public consultation(String compterendu, Ordonnance ordonnance) {
-        Compterendu = compterendu;
+    public consultation(String compterendu, Ordonnance ordonnance, CertificatMedical certificatMedical) {
+        this.Compterendu = compterendu;
         this.ordonnance = ordonnance;
+        this.certificatMedical = certificatMedical;
     }
 
 
@@ -58,11 +60,40 @@ public class consultation {
         this.etatpatient = etatpatient;
     }
 
+    
+    public CertificatMedical getCertificatMedical() {
+        return certificatMedical;
+    }
 
-    @Override
-    public String toString() {
-        return "consultation [Compterendu=" + Compterendu + ", Date=" + Date + ", etatpatient=" + etatpatient
-                + " ]\r" + ordonnance ;
+
+    public void setCertificatMedical(CertificatMedical certificatMedical) {
+        this.certificatMedical = certificatMedical;
+    }
+
+
+    public void AfficherConsultation(){
+        System.out.println("--------------------Consultation----------------------");
+        System.out.println("Date : "+this.Date);
+        System.out.println("Compte rendu : "+this.Compterendu);
+        System.out.println("Etat du patient : "+this.etatpatient);
+
+        System.out.println("Ordonnance : ");
+        if (ordonnance!=null){
+            ordonnance.generateDocument();
+        }
+        else {
+            System.out.println("Pas d'ordonnance");
+        }
+
+        System.out.println("Certificat Medical : ");
+        if (certificatMedical!=null){
+            certificatMedical.generateDocument();
+        }
+        else {
+            System.out.println("Pas de certificat medical");
+        }
+        System.out.println("--------------------------------------------------------\n");
+        
     }
 
     

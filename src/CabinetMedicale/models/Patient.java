@@ -116,6 +116,10 @@ public class Patient {
     }
 
 
+    public int getNumeroDossier() {
+        return numeroDossier;
+    }
+
 
     public ArrayList<String> getAntecedentsMedicaux() {
         return AntecedentsMedicaux;
@@ -153,21 +157,23 @@ public class Patient {
     }
 
 
-    
-
-
-    @Override
-    public String toString() {
-        return "Patient [numeroDeTel=" + numeroDeTel + ", nom=" + nom + ", prenom=" + prenom + ", DateDeNaissance="
-                + DateDeNaissance + ", poid=" + poid + ", taille=" + taille + ", adresse=" + adresse
-                + ", AntecedentsMedicaux=" + AntecedentsMedicaux + ", AntecedentsChirurgicaux="
-                + AntecedentsChirurgicaux  +" , numeroDossier=" + numeroDossier + "]\n " + dossierMedical+"]";
-    }
-
-
 
     public void afficherinfo(){
-        System.out.println(this.toString());
+        System.out.println("\n-----------------------------\n");
+        System.out.println("Nom : "+nom);
+        System.out.println("Prenom : "+prenom);
+        System.out.println("Date de naissance : "+DateDeNaissance);
+        System.out.println("Poid : "+poid);
+        System.out.println("Taille : "+taille);
+        System.out.println("Adresse : "+adresse);
+        System.out.println("Numero de telephone : "+numeroDeTel);
+        System.out.println("Numero de dossier : "+numeroDossier);
+        System.out.println("Antecedents Medicaux : "+AntecedentsMedicaux);
+        System.out.println("Antecedents Chirurgicaux : "+AntecedentsChirurgicaux);
+        System.out.println("\n-----------------------------\n");
+        System.out.println("Dossier Medical : ");
+        dossierMedical.AfficherDossierMedical();
+
     }
     
     public void ajouterAntecedentMedical (){

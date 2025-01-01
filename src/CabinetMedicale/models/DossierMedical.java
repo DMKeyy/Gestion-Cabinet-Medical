@@ -35,20 +35,21 @@ public class DossierMedical {
     }
 
 
-    
-
-    @Override
-    public String toString() {
-        return "DossierMedical [ patient : " + patient.getNom() +" "+ patient.getPrenom() + " ]\n"+" consultations : " + consultations ;
-    }
-
-
     public void ajouterConsultation (consultation Consultation){
         this.consultations.add(Consultation);
         }
 
     public void AfficherDossierMedical (){
-        System.out.println(toString());
+        System.out.println("--------------------Dossier Medical----------------------");
+        System.out.println("Nom et prenom : "+this.patient.getNom()+" "+this.patient.getPrenom());
+        System.out.println("Numero de dossier : "+this.patient.getNumeroDossier());
+        System.out.println("--------------------Consultations---------------------");
+        System.out.println("Nombre de consultations : "+this.consultations.size());
+        for (consultation consultation : consultations) {
+            consultation.AfficherConsultation();
+            
+        }
+        System.out.println("--------------------------------------------------------");
     }
 
     
