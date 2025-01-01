@@ -17,10 +17,12 @@ public class gestionRDV {
         RDVs=new ArrayList<RendezVous>();
     }
 
+    
 
     public gestionRDV(ArrayList<RendezVous> rDVs) {
         RDVs = rDVs;
     }
+
 
 
     public void GestionRDV(){
@@ -69,6 +71,8 @@ public class gestionRDV {
     }while(choix!=5);
     }
 
+
+
     public void RemplireDate (RendezVous RDV){
         int jour,mois,annee,heure,minute;
         System.out.println("jour : (1-31)");       jour=sc.nextInt();      sc.nextLine(); 
@@ -79,6 +83,8 @@ public class gestionRDV {
         
         RDV.setDateHeure(LocalDateTime.of(annee, mois, jour, heure, minute));
     }
+
+
 
     public void ajouterRDV(){
         System.out.println("Entrer le Nom : ");
@@ -101,6 +107,8 @@ public class gestionRDV {
 
     }
 
+
+
     public void annulerRDV(){
         RendezVous RDV = new RendezVous();
         RemplireDate(RDV);
@@ -115,6 +123,8 @@ public class gestionRDV {
         }
     }
 
+
+
     public void AfficherRDVs(){
         if (RDVs.isEmpty()) {
             System.out.println("il n'y a aucun rendez-vous");
@@ -125,6 +135,8 @@ public class gestionRDV {
             }
         }
     }
+
+
 
     public int RechercheRDV(ArrayList<RendezVous> listeRDV,LocalDateTime date){
         int left = 0;   //recherche binaire
@@ -147,6 +159,8 @@ public class gestionRDV {
         return -1;
     }
 
+
+
     public void modiferRDV(){
         RendezVous RDV = new RendezVous();
         System.out.println("Entrer la date du rendez-vous a modifier : ");
@@ -167,4 +181,6 @@ public class gestionRDV {
         Collections.sort(RDVs,Comparator.comparing(RendezVous::getDateHeure)); // trier les rendez-vous
 
     }
+
+
 }

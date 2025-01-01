@@ -71,6 +71,7 @@ public class consultation {
     }
 
 
+    
     public void AfficherConsultation(){
         System.out.println("--------------------Consultation----------------------");
         System.out.println("Date : "+this.Date);

@@ -63,6 +63,8 @@ public class CertificatMedical {
         this.duration = duration;
     }
 
+
+    
     public void generateDocument() {
         System.out.println("---Certificat Medical---");
         System.out.println("Nom et prenom du patient : "+this.patientName);

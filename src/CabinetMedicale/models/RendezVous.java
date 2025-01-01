@@ -85,6 +85,7 @@ public class RendezVous {
     }
 
 
+
     public static boolean AjouterRDV(ArrayList<RendezVous> listeRDV,RendezVous RDV){ //// ajouter un intervale de 15min
         if (verifRDV(listeRDV,RDV.getDateHeure())) {
             System.out.println("Date non disponible");
@@ -96,6 +97,8 @@ public class RendezVous {
         return true;
     }
 
+
+    
     public static boolean verifRDV(ArrayList<RendezVous> listeRDV,LocalDateTime date){
         for (RendezVous rendezVous : listeRDV) {
             if (rendezVous.getDateHeure().isEqual(date)) {

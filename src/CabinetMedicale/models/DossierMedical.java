@@ -39,6 +39,8 @@ public class DossierMedical {
         this.consultations.add(Consultation);
         }
 
+
+        
     public void AfficherDossierMedical (){
         System.out.println("--------------------Dossier Medical----------------------");
         System.out.println("Nom et prenom : "+this.patient.getNom()+" "+this.patient.getPrenom());

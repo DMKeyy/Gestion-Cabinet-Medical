@@ -2,8 +2,11 @@ package CabinetMedicale.models;
 
 import java.time.LocalDate;
 import java.util.ArrayList;
+import java.util.Scanner;
 
 public class Ordonnance {
+    Scanner sc = new Scanner(System.in);
+
     private String nom;
     private String prenom;
     private ArrayList<String> medicament;
@@ -95,4 +98,68 @@ public class Ordonnance {
         }
         System.out.println("-------------------------\n");
     }
+
+
+    
+    public void AjouterMedicament(){
+        System.out.println("Combien de medicament voulez vous ajouter ?");
+        int nbMedicament ;
+        do {
+            while (true) {
+                if (sc.hasNextInt()) {
+                    nbMedicament = sc.nextInt();
+                    if (nbMedicament<1) {
+                        System.out.println("Le nombre de medicaments doit être positif.");
+                    }
+                    break;
+                } else {
+                    System.out.println("Entré invalide . Entrez un entier positif.");
+                    sc.next(); // Clear invalid input
+                }
+            }
+        } while (nbMedicament<1);
+        for (int i = 0; i < nbMedicament; i++) {
+
+            System.out.println("Entrer le nom du medicament : ");
+            medicament.add(sc.next());
+
+            System.out.println("Entrer la dose : ");
+            doses.add(sc.next());
+        }
+    }
+
+
+
+    public void SupprimerMedicament(){
+        System.out.println("Entrer le nom du medicament à supprimer : ");
+        String medicamentSupp = sc.next();
+
+        if (medicament.contains(medicamentSupp)) {
+            doses.remove(medicament.indexOf(medicamentSupp));
+            medicament.remove(medicamentSupp);
+            System.out.println("Medicament supprimé avec succès.");
+        }
+        else {
+            System.out.println("Medicament introuvable.");
+        }
+    }
+
+
+
+    public void ModifierDose(){
+        System.out.println("Entrer le nom du medicament dont vous voulez modifier la dose : ");
+        String medicamentModif = sc.next();
+
+        if (medicament.contains(medicamentModif)) {
+            System.out.println("Entrer la nouvelle dose : ");
+            doses.set(medicament.indexOf(medicamentModif), sc.next());
+
+            System.out.println("Dose modifiée avec succès.");
+        }
+        else {
+            System.out.println("Medicament introuvable.");
+        }
+    }
+
+
 }

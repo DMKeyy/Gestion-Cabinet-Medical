@@ -147,9 +147,11 @@ public class Patient {
     }
 
 
+
     public void setAntecedentsChirurgicaux(ArrayList<String> antecedentsChirurgicaux) {
         AntecedentsChirurgicaux = antecedentsChirurgicaux;
     }
+
 
 
     public void setDateDeNaissance(String dateDeNaissance) {
@@ -176,6 +178,8 @@ public class Patient {
 
     }
     
+
+
     public void ajouterAntecedentMedical (){
         System.out.println("Entrer l'antecedent medical a ajouter : ");
         String Antecedent = sc.nextLine();
@@ -195,11 +199,15 @@ public class Patient {
         }
     }
 
+
+
     public void ajouterAntecedentChirurgical (){
         System.out.println("Entrer l'antecedent chirurgical a ajouter : ");
         String Antecedent = sc.nextLine();
         AntecedentsChirurgicaux.add(Antecedent);
     }
+
+
 
     public void modifierAntecedentChirurgical(){
         System.out.println("Entrer l'antecedent chirurgical a modifier : ");
@@ -214,6 +222,8 @@ public class Patient {
         }
     }   
     
+
+
     public void supprimerAntecedentChirurgical(){
         System.out.println("Entrer l'antecedent chirurgical a supprimer : ");
         String AntecedentASupprimer = sc.nextLine();
@@ -231,6 +241,8 @@ public class Patient {
         }
     }
 
+
+
     public void supprimerAntecedentMedical(){
         System.out.println("Entrer l'antecedent medical a supprimer : ");
         String AntecedentASupprimer = sc.nextLine();
@@ -247,4 +259,6 @@ public class Patient {
             }
         }
     }
+
+    
 }

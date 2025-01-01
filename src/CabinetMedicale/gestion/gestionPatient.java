@@ -15,6 +15,7 @@ public class gestionPatient {
         }
         
         public void GestionPatient() {
+
             int choix;
             do{
             System.out.println("Voulez-vous : ");
@@ -66,6 +67,7 @@ public class gestionPatient {
     }
 
 
+
     public Patient selectionnerPatient(){
         System.out.println("\nveuillez selectionner un patient : \n");
         System.out.println("Entrer le nom du patient : ");
@@ -82,6 +84,7 @@ public class gestionPatient {
         System.out.println("Patient non trouvé.");
         return null;
     }
+
 
 
     public void ajouterPatient() {
@@ -174,6 +177,7 @@ public class gestionPatient {
     }
 
 
+
     public void modifierPatient(){
 
         Patient patient = selectionnerPatient();
@@ -246,11 +250,13 @@ public class gestionPatient {
     }
 
 
+
     public void modifiernNom(Patient patient){
         System.out.println("Entrer le nouveau nom : ");
         String nom = sc.nextLine();
         patient.setNom(nom);
     }
+
 
 
     public void modifierPrenom(Patient patient){
@@ -260,11 +266,13 @@ public class gestionPatient {
     }
 
 
+
     public void modifierDateDeNaissance(Patient patient){
         System.out.println("Entrer la nouvelle date de naissance : ");
         String DateDeNaissance = sc.nextLine();
         patient.setDateDeNaissance(DateDeNaissance);
     }
+
 
     
     public void modifierAdresse(Patient patient){
@@ -272,6 +280,7 @@ public class gestionPatient {
         String adresse = sc.nextLine();
         patient.setAdresse(adresse);
     }
+
 
 
     public void modifierPoid(Patient patient){
@@ -287,6 +296,7 @@ public class gestionPatient {
     }
 
 
+
     public void modifierTaille(Patient patient){
         System.out.println("Entrer la nouvelle taille : ");
         try {
@@ -297,6 +307,7 @@ public class gestionPatient {
             sc.nextLine();
         }
     }
+
 
 
     public void modifierAntecedentMedical(Patient patient){
@@ -339,6 +350,7 @@ public class gestionPatient {
     }
 
 
+
     public void modifierAntecedentChirurgical(Patient patient){
         System.out.println("Voulez-vous ajouter, modifer ou supprimer un antecedent chirurgical : ");
         System.out.println("1 . Ajouter");
@@ -379,6 +391,7 @@ public class gestionPatient {
     }
 
 
+
     public void modifierNumeroDeTel(Patient patient){
         System.out.println("Entrer le nouveau numero de telephone : ");
         String numeroDeTel = sc.nextLine();
@@ -391,13 +404,18 @@ public class gestionPatient {
     }
 
 
+
     public void supprimerPatient(){
         Patient patient = selectionnerPatient();
         if (patient != null) {
             patients.remove(patient);
             System.out.println("Patient supprimé.");
         }
+        else {
+            System.out.println("Patient non trouvé.");
+        }
     }
+
 
 
     public void afficherPatients(){
