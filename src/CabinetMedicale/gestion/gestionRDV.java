@@ -2,6 +2,8 @@ package CabinetMedicale.gestion;
 
 import java.time.LocalDateTime;
 import java.util.ArrayList;
+import java.util.Collections;
+import java.util.Comparator;
 import java.util.Scanner;
 
 import CabinetMedicale.models.RendezVous;
@@ -25,12 +27,12 @@ public class gestionRDV {
 
         int choix;
         do{
-        System.out.println("Voulez-vous : ");
-        System.out.println("1 . Ajouter un Rendez-vous");
-        System.out.println("2 . Annuler un Rendez-vous");
-        System.out.println("3 . Modifier un Rendez-vous ");
-        System.out.println("4 . Afficher les Rendez-vous");
-        System.out.println("5 . Retour");
+            System.out.println("\n\nVoulez-vous : \n");
+            System.out.println("1 . Ajouter un Rendez-vous");
+            System.out.println("2 . Annuler un Rendez-vous");
+            System.out.println("3 . Modifier un Rendez-vous ");
+            System.out.println("4 . Afficher les Rendez-vous");
+            System.out.println("5 . Retour");
         
         choix=0;
         do {
@@ -41,8 +43,9 @@ public class gestionRDV {
                     
                     System.out.println("Erreur: le nombre doit etre entre 1 et 5.");
                 }
-            } catch (NumberFormatException e) {
+            } catch (Exception e) {
                 System.out.println("Erreur: Veuiller entrer un entier.");
+                sc.nextLine();
             }
 
         } while (choix < 1 || choix > 5);
@@ -68,7 +71,6 @@ public class gestionRDV {
 
     public void RemplireDate (RendezVous RDV){
         int jour,mois,annee,heure,minute;
-        System.out.println("Entrer la date du rendez vous : ");
         System.out.println("jour : (1-31)");       jour=sc.nextInt();      sc.nextLine(); 
         System.out.println("Mois : (1-12)");       mois=sc.nextInt();      sc.nextLine(); 
         System.out.println("heure : (0-24)");      heure=sc.nextInt();     sc.nextLine(); 
@@ -89,10 +91,13 @@ public class gestionRDV {
         String pourquoi =sc.nextLine();
 
         RendezVous RDV = new RendezVous(null,nom,prenom,numero,pourquoi);
-        
+
         do {
+            System.out.println("Entrer la date du rendez-vous : ");
             RemplireDate(RDV);
         } while (!RendezVous.AjouterRDV(RDVs, RDV));
+
+        Collections.sort(RDVs,Comparator.comparing(RendezVous::getDateHeure)); // trier les rendez-vous
 
     }
 
@@ -144,12 +149,22 @@ public class gestionRDV {
 
     public void modiferRDV(){
         RendezVous RDV = new RendezVous();
+        System.out.println("Entrer la date du rendez-vous a modifier : ");
         RemplireDate(RDV);
         int x = RechercheRDV(RDVs, RDV.getDateHeure());
 
+        if (x==-1) {
+            System.out.println("Le rendez-vous n'existe pas");
+            return;
+        }
+
+        System.out.println("Entrer la nouvelle date du rendez-vous : ");
         RemplireDate(RDV); // avoir la nouvelle date
 
         RendezVous newRDV = RDVs.get(x);
         newRDV.setDateHeure(RDV.getDateHeure());
+
+        Collections.sort(RDVs,Comparator.comparing(RendezVous::getDateHeure)); // trier les rendez-vous
+
     }
 }

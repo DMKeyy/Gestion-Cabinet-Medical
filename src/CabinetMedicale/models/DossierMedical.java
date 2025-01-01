@@ -6,7 +6,6 @@ public class DossierMedical {
     
     private Patient patient;
     private ArrayList<consultation> consultations;
-    private String etatPatient;
 
     
 
@@ -40,8 +39,7 @@ public class DossierMedical {
 
     @Override
     public String toString() {
-        return "DossierMedical [patient=" + patient.getNom() +" "+ patient.getPrenom() + ", consultations=" + consultations + ", etatPatient="
-                + etatPatient + "]";
+        return "DossierMedical [ patient : " + patient.getNom() +" "+ patient.getPrenom() + " ]\n"+" consultations : " + consultations ;
     }
 
 
@@ -52,17 +50,6 @@ public class DossierMedical {
     public void AfficherDossierMedical (){
         System.out.println(toString());
     }
-
-
-    public String getEtatPatient() {
-        return etatPatient;
-    }
-
-
-    public void setEtatPatient(String etatPatient) {
-        this.etatPatient = etatPatient;
-    }
-    
 
     
 }

@@ -161,8 +161,7 @@ public class Patient {
         return "Patient [numeroDeTel=" + numeroDeTel + ", nom=" + nom + ", prenom=" + prenom + ", DateDeNaissance="
                 + DateDeNaissance + ", poid=" + poid + ", taille=" + taille + ", adresse=" + adresse
                 + ", AntecedentsMedicaux=" + AntecedentsMedicaux + ", AntecedentsChirurgicaux="
-                + AntecedentsChirurgicaux + ", " + dossierMedical
-                +" , numeroDossier=" + numeroDossier +"]";
+                + AntecedentsChirurgicaux  +" , numeroDossier=" + numeroDossier + "]\n " + dossierMedical+"]";
     }
 
 
@@ -207,5 +206,39 @@ public class Patient {
                 AntecedentsMedicaux.set(AntecedentsMedicaux.indexOf(antecedent), NouvelAntecedent);
             }
         }
-    }    
+    }   
+    
+    public void supprimerAntecedentChirurgical(){
+        System.out.println("Entrer l'antecedent chirurgical a supprimer : ");
+        String AntecedentASupprimer = sc.nextLine();
+
+        for (String antecedent : getAntecedentsChirurgicaux()) {
+
+            if (antecedent.equalsIgnoreCase(AntecedentASupprimer)) {
+                getAntecedentsChirurgicaux().remove(antecedent);
+                System.out.println("Antecedent supprimé.");
+                    break;
+            }
+            else {
+                System.out.println("Antecedent non trouvé.");
+            }
+        }
+    }
+
+    public void supprimerAntecedentMedical(){
+        System.out.println("Entrer l'antecedent medical a supprimer : ");
+        String AntecedentASupprimer = sc.nextLine();
+
+        for (String antecedent : getAntecedentsMedicaux()) {
+
+            if (antecedent.equalsIgnoreCase(AntecedentASupprimer)) {
+                getAntecedentsMedicaux().remove(antecedent);
+                System.out.println("Antecedent supprimé.");
+                    break;
+            }
+            else {
+                System.out.println("Antecedent non trouvé.");
+            }
+        }
+    }
 }

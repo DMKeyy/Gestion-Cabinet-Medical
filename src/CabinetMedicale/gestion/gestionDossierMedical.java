@@ -18,7 +18,8 @@ public class gestionDossierMedical {
         do{
         System.out.println("Gestion du dossier médical : (1-3)");
         System.out.println("1 . Ajouter une consultation");
-        System.out.println("2 . Modifier l'etat medical du patient");
+        System.out.println("2 . Modifier une consultation");
+        System.out.println("3 . Supprimer une consultation");
         System.out.println("3 . Afficher le dossier médical");
         System.out.println("4 . Retour");
 
@@ -31,7 +32,7 @@ public class gestionDossierMedical {
 
                 System.out.println("Erreur: le nombre doit etre entre 1 et 4.");
             }
-            } catch (NumberFormatException e) {
+            } catch (Exception e) {
                 System.out.println("Erreur: Veuiller entrer un entier.");
             }
 
@@ -42,12 +43,14 @@ public class gestionDossierMedical {
                 AjouterConsultation(patient.getDossierMedical(),patient);
                 break;
             case 2:
-                ModifierEtatMedical(patient.getDossierMedical());
+                ModifierConsultation(patient.getDossierMedical());
                 break;
             case 3:
+                SupprimerConsultation(patient.getDossierMedical());
+            case 4:
                 patient.getDossierMedical().AfficherDossierMedical();
                 break;
-            case 4:
+            case 5:
                 break;
             default:
                 break;
@@ -60,19 +63,24 @@ public class gestionDossierMedical {
 
         System.out.println("Entrer le compte rendu de la consultation : ");
         Consultation.setCompterendu(sc.nextLine());
+
+        System.out.println("Entrer l'etat du patient : ");
+        Consultation.setEtatpatient(sc.nextLine());
+
         System.out.println("Voulez vous ajouter une ordonnance ? (O/N)");
         String choix = sc.nextLine();
+
         if (choix.equals("O") || choix.equals("o")) {
             Ordonnance ordonnance = new Ordonnance();
 
             ordonnance.setNom(patient.getNom());
             ordonnance.setPrenom(patient.getPrenom());
 
-            System.out.println("Entrer le nombre de traitement : ");
+            System.out.println("Entrer le nombre de traitements : ");
             int nb = sc.nextInt();
             sc.nextLine();
             for (int i = 0; i < nb; i++) {
-                System.out.println("Entrer le nom du médicament : ");
+                System.out.println("Entrer le nom du médicaments : ");
                 ordonnance.getMedicament().add(sc.nextLine());
                 System.out.println("Entrer la dose : ");
                 ordonnance.getDoses().add(sc.nextLine());
@@ -87,10 +95,9 @@ public class gestionDossierMedical {
         dossierMedical.ajouterConsultation(Consultation);
     }
 
-    public void ModifierEtatMedical (DossierMedical dossierMedical){
-        System.out.println("Entrer le nouvel etat medical du patient : ");
-        dossierMedical.setEtatPatient(sc.nextLine());
-    }
+    public void ModifierConsultation(DossierMedical dossierMedical){}
+
+    public void SupprimerConsultation(DossierMedical dossierMedical){}
 
 
 }

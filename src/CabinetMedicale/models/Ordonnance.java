@@ -87,8 +87,8 @@ public class Ordonnance {
 
     @Override
     public String toString() {
-        return "Ordonnance [nom=" + nom + ", prenom=" + prenom + ", medicament=" + medicament + ", doses=" + doses
-                + ", date=" + dateOrdonnance + ", nomMedecin=" + nomMedecin + "]";
+        return "Ordonnance [ Nom : " + nom + ", Prenom : " + prenom + ", Medicament : " + medicament + ", Doses : " + doses
+                + ", date : " + dateOrdonnance + ", Nom Medecin : " + nomMedecin + " ]";
     }
 
 }

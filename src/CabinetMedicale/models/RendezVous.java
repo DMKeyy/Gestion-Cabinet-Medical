@@ -80,8 +80,8 @@ public class RendezVous {
 
     @Override
     public String toString() {
-        return "RendezVous [nom=" + nom + ", prenom=" + prenom + ", telephone=" + telephone
-                + ", pourquoi=" + pourquoi +" dateHeure=" + dateHeure + "]";
+        return "RendezVous [nom : " + nom + ", prenom : " + prenom + ", Telephone : " + telephone
+                + ", Motif du rendez-vous : " + pourquoi +", Date  Heure=" + dateHeure + "]";
     }
 
 

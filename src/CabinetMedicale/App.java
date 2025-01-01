@@ -20,8 +20,10 @@ public class App {
         gestionDossierMedical gestionDossierMedical = new gestionDossierMedical();
 
         int choix;
+
+        System.out.println("Bienvenue dans le cabinet médicale\n\n");
         do{
-        System.out.println("choissisez une option : ");
+        System.out.println("choissisez une option : \n");
         System.out.println("1 . Gestion des patients");
         System.out.println("2 . Gestion des rendez-vous");
         System.out.println("3 . Gestion du dossier médical d'un patient");
@@ -29,19 +31,22 @@ public class App {
 
         choix = 0;
 
+
         do {
-            try {
-                choix = sc.nextInt();
-                sc.nextLine();
-                if (choix < 1 && choix > 4) {
-
-                    System.out.println("Erreur: le nombre doit etre entre 1 et 4.");
+            while (true) {
+                if (sc.hasNextInt()) {
+                    choix = sc.nextInt();
+                    if (choix < 1 || choix > 4) {
+                        System.out.println("L'entier dois etre entre 1 et 4.");
+                    }
+                    break;
+                } else {
+                    System.out.println("Entré invalide . Entrez un entier entre 1 et 4.");
+                    sc.next(); // Clear invalid input
                 }
-            } catch (NumberFormatException e) {
-                System.out.println("Erreur: Veuiller entrer un entier.");
             }
-
-        } while (choix < 1 && choix > 4);
+        } while (choix < 1 || choix > 4);
+        
 
         switch (choix) {
             case 1:

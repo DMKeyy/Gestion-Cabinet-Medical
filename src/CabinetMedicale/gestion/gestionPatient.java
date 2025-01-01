@@ -28,18 +28,20 @@ public class gestionPatient {
             choix = 0;
     
             do {
-                try {
-                    choix = sc.nextInt();
-                    sc.nextLine();
-                if (choix < 1 && choix > 6) {
-
-                    System.out.println("Erreur: le nombre doit etre entre 1 et 6.");
+                while (true) {
+                    if (sc.hasNextInt()) {
+                        choix = sc.nextInt();
+                        sc.nextLine();
+                        if (choix < 1 || choix > 6) {
+                            System.out.println("l'entier dois etre entre 1 et 6.");
+                        }
+                        break;
+                    } else {
+                        System.out.println("Entré invalide . Entrez un entier entre 1 et 6.");
+                        sc.next(); // Clear invalid input
+                    }
                 }
-            } catch (NumberFormatException e) {
-                System.out.println("Erreur: Veuiller entrer un entier.");
-            }
-
-        } while (choix < 1 || choix > 6);
+            } while (choix < 1 || choix > 6);
 
         switch (choix) {
             case 1:
@@ -64,6 +66,24 @@ public class gestionPatient {
     }
 
 
+    public Patient selectionnerPatient(){
+        System.out.println("\nveuillez selectionner un patient : \n");
+        System.out.println("Entrer le nom du patient : ");
+        String nom = sc.nextLine();
+        System.out.println("Entrer le prénom du patient : ");
+        String prenom = sc.nextLine();
+
+        for (Patient patient : patients) {
+            if (patient.getNom().equalsIgnoreCase(nom) && patient.getPrenom().equalsIgnoreCase(prenom)) {
+                return patient;
+            }
+        }
+
+        System.out.println("Patient non trouvé.");
+        return null;
+    }
+
+
     public void ajouterPatient() {
 
 
@@ -82,7 +102,7 @@ public class gestionPatient {
         System.out.println("Entrer l'adresse du patient: ");
         String adresse = sc.nextLine();
 
-        System.out.println("Entrer le poid du patient: (en kg XX.xx)");
+        System.out.println("Entrer le poids du patient: (en kg XX.xx)");
 
         double poid=0;
             do{
@@ -95,11 +115,10 @@ public class gestionPatient {
                         System.out.println("Erreur: le poids doit être positif.");
                     }
                 } catch (Exception e) {
-                    System.out.println("Erreur: Veuillez entrer un nombre valide.");
+                    System.out.println("Erreur: Veuillez entrer un nombre valide. (XX.xx)");
                     sc.nextLine();
                     poid=0;
                 }
-            
             }while(poid<=0);
 
         System.out.println("Entrer la taille du patient: (en mettres X.xx)");
@@ -116,7 +135,7 @@ public class gestionPatient {
                     System.out.println("Erreur: la taille doit être positif.");
                 }
             } catch (Exception e) {
-                System.out.println("Erreur: Veuillez entrer un nombre valide.");
+                System.out.println("Erreur: Veuillez entrer un nombre valide. (X.xx)");
                 sc.nextLine();
                 taille=0;
             }
@@ -137,6 +156,8 @@ public class gestionPatient {
                     AntecedentsMedicaux.add(Antecedent);
                 }
             } while (!fin);
+
+        fin = false;
         
         System.out.println("Entrer les antecedents chirurgicaux du patient: (si vous avez fini entrer 'fin')");
         ArrayList<String> AntecedentsChirurgicaux = new ArrayList<String>();
@@ -177,13 +198,13 @@ public class gestionPatient {
                 System.out.println("Entrer votre choix: (1-10)");
                 try {
                     choix = sc.nextInt();
-
+                    sc.nextLine();
                     if (choix < 1 && choix > 8) {
                         
                         System.out.println("Erreur: le nombre doit etre entre 1 et 10.");
                     }
-                } catch (NumberFormatException e) {
-                    System.out.println("Erreur: Veuiller entrer un entier.");
+                } catch (Exception e) {
+                    System.out.println("Erreur: Veuiller entrer un entier. ");
                 }
 
             } while (choix < 1 || choix > 10);
@@ -222,23 +243,6 @@ public class gestionPatient {
                 }
         }
         
-    }
-
-
-    public Patient selectionnerPatient(){
-        System.out.println("Entrer le nom du patient : ");
-        String nom = sc.nextLine();
-        System.out.println("Entrer le prénom du patient : ");
-        String prenom = sc.nextLine();
-
-        for (Patient patient : patients) {
-            if (patient.getNom().equalsIgnoreCase(nom) && patient.getPrenom().equalsIgnoreCase(prenom)) {
-                return patient;
-            }
-        }
-
-        System.out.println("Patient non trouvé.");
-        return null;
     }
 
 
@@ -307,12 +311,12 @@ public class gestionPatient {
             System.out.println("Entrer votre choix: (1-4)");
             try {
                 choix = sc.nextInt();
-
+                sc.nextLine();
                 if (choix < 1 && choix > 4) {
                     
                     System.out.println("Erreur: le nombre doit etre entre 1 et 4.");
                 }
-            } catch (NumberFormatException e) {
+            } catch (Exception e) {
                 System.out.println("Erreur: Veuiller entrer un entier.");
                 sc.nextLine();
             }
@@ -327,13 +331,7 @@ public class gestionPatient {
                 patient.modifierAntecedentMedical();
                 break;
             case 3:
-                System.out.println("Entrer l'antecedent medical a supprimer : ");
-                String AntecedentASupprimer = sc.nextLine();
-                for (String antecedent : patient.getAntecedentsMedicaux()) {
-                    if (antecedent.equalsIgnoreCase(AntecedentASupprimer)) {
-                        patient.getAntecedentsMedicaux().remove(antecedent);
-                    }
-                }
+                patient.supprimerAntecedentMedical();
                 break;
             case 4:
                 break;
@@ -353,12 +351,12 @@ public class gestionPatient {
             System.out.println("Entrer votre choix: (1-4)");
             try {
                 choix = sc.nextInt();
-
+                sc.nextLine();
                 if (choix < 1 && choix > 4) {
                     
                     System.out.println("Erreur: le nombre doit etre entre 1 et 4.");
                 }
-            } catch (NumberFormatException e) {
+            } catch (Exception e) {
                 System.out.println("Erreur: Veuiller entrer un entier.");
                 sc.nextLine();
             }
@@ -373,13 +371,7 @@ public class gestionPatient {
                 patient.modifierAntecedentChirurgical();
                 break;
             case 3:
-                System.out.println("Entrer l'antecedent chirurgical a supprimer : ");
-                String AntecedentASupprimer = sc.nextLine();
-                for (String antecedent : patient.getAntecedentsChirurgicaux()) {
-                    if (antecedent.equalsIgnoreCase(AntecedentASupprimer)) {
-                        patient.getAntecedentsChirurgicaux().remove(antecedent);
-                    }
-                }
+                patient.supprimerAntecedentChirurgical();
                 break;
             case 4:
                 break;
@@ -407,9 +399,12 @@ public class gestionPatient {
         }
     }
 
+
     public void afficherPatients(){
         for (Patient patient : patients) {
             patient.afficherinfo();
         }
     }
+
+
 }

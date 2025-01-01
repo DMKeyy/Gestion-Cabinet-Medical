@@ -1,7 +1,10 @@
 package CabinetMedicale.models;
+import java.time.LocalDate;
 
 public class consultation {
     private String Compterendu ;
+    private LocalDate Date= LocalDate.now();
+    private String etatpatient;
     private Ordonnance ordonnance;
 
 
@@ -36,9 +39,30 @@ public class consultation {
     }
 
 
+    public LocalDate getDate() {
+        return Date;
+    }
+
+
+    public void setDate(LocalDate date) {
+        Date = date;
+    }
+
+
+    public String getEtatpatient() {
+        return etatpatient;
+    }
+
+
+    public void setEtatpatient(String etatpatient) {
+        this.etatpatient = etatpatient;
+    }
+
+
     @Override
     public String toString() {
-        return "[Compterendu=" + Compterendu + ", ordonnance=" + ordonnance + "]";
+        return "consultation [Compterendu=" + Compterendu + ", Date=" + Date + ", etatpatient=" + etatpatient
+                + " ]\r" + ordonnance ;
     }
 
     
