@@ -11,6 +11,7 @@ import CabinetMedicale.models.RendezVous;
 
 public class gestionRDV {
     Scanner sc = new Scanner(System.in);
+
     private ArrayList<RendezVous> RDVs;
 
     public gestionRDV() {
@@ -28,8 +29,9 @@ public class gestionRDV {
     public void GestionRDV(){
 
         int choix;
+        System.out.println("\n\nGestion des rendez-vous\n");
         do{
-            System.out.println("\n\nVoulez-vous : \n");
+            System.out.println("Voulez-vous : \n");
             System.out.println("1 . Ajouter un Rendez-vous");
             System.out.println("2 . Annuler un Rendez-vous");
             System.out.println("3 . Modifier un Rendez-vous ");
@@ -75,12 +77,102 @@ public class gestionRDV {
 
     public void RemplireDate (RendezVous RDV){
         int jour,mois,annee,heure,minute;
-        System.out.println("jour : (1-31)");       jour=sc.nextInt();      sc.nextLine(); 
-        System.out.println("Mois : (1-12)");       mois=sc.nextInt();      sc.nextLine(); 
-        System.out.println("heure : (0-24)");      heure=sc.nextInt();     sc.nextLine(); 
-        System.out.println("Minute :(0-60)");     minute=sc.nextInt();    sc.nextLine(); 
-        System.out.println("Annee :");      annee=sc.nextInt();     sc.nextLine(); 
+
+        System.out.println("jour : (1-31)");
+        do {
+            while (true) {
+                if (sc.hasNextInt()) {
+                    jour = sc.nextInt();
+                    sc.nextLine();
+                    if (jour < 1 || jour > 31) {
+                        System.out.println("Le jour dois etre entre 1 et 31.");
+                    }
+                    break;
+                } else {
+                    System.out.println("Entré invalide . Entrez un entier entre 1 et 31.");
+                    sc.next(); // Clear invalid input
+                }
+            }
+        } while (jour < 1 || jour > 31);
         
+        
+
+        System.out.println("Mois : (1-12)"); 
+        do {
+            while (true) {
+                if (sc.hasNextInt()) {
+                    mois = sc.nextInt();
+                    sc.nextLine();
+                    if ((mois < 1 || mois > 12)) {
+                        System.out.println("Le mois dois etre entre 1 et 12.");
+                    }
+                    if (mois == 2 && jour > 29) {
+                        System.out.println("Le mois de février ne peut pas avoir plus de 29 jours.");
+                        
+                    }
+                    break;
+                } else {
+                    System.out.println("Entré invalide . Entrez un entier entre 1 et 12.");
+                    sc.next(); // Clear invalid input
+                }
+            }
+        } while (mois < 1 || mois > 12);
+        
+        
+
+        System.out.println("heure : (8h-18h)");
+        do {
+            while (true) {
+                if (sc.hasNextInt()) {
+                    heure = sc.nextInt();
+                    sc.nextLine();
+                    if (heure < 8 || heure >18) {
+                        System.out.println("Le Cabinet est ouvert du 8h a 18h.");
+                    }
+                    break;
+                } else {
+                    System.out.println("Entré invalide . Entrez un entier entre 8 et 18.");
+                    sc.next(); // Clear invalid input
+                }
+            }
+        } while (heure < 8 || heure > 18);
+
+
+
+        System.out.println("Minute :(0-60)");     
+        do {
+            while (true) {
+                if (sc.hasNextInt()) {
+                    minute = sc.nextInt();
+                    sc.nextLine();
+                    if (minute < 0 || minute > 59) {
+                        System.out.println("Les minutes doivent être entre 0 et 59.");
+                    }
+                    break;
+                } else {
+                    System.out.println("Entré invalide . Entrez un entier entre 0 et 60.");
+                    sc.next(); // Clear invalid input
+                }
+            }
+        } while (minute < 0 || minute > 59); 
+
+        System.out.println("Annee :");      
+        do {
+            while (true) {
+                if (sc.hasNextInt()) {
+                    annee = sc.nextInt();
+                    sc.nextLine();
+                    if (annee < LocalDateTime.now().getYear()) {
+                        System.out.println("L'année doit être supérieure ou égale à l'année actuelle.");
+                    }
+                    break;
+                } else {
+                    System.out.println("Entré invalide . Entrez un entier.");
+                    sc.next(); // Clear invalid input
+                }
+            }
+        } while (annee < LocalDateTime.now().getYear());
+
         RDV.setDateHeure(LocalDateTime.of(annee, mois, jour, heure, minute));
     }
 
@@ -103,7 +195,7 @@ public class gestionRDV {
             RemplireDate(RDV);
         } while (!RendezVous.AjouterRDV(RDVs, RDV));
 
-        Collections.sort(RDVs,Comparator.comparing(RendezVous::getDateHeure)); // trier les rendez-vous
+         // trier les rendez-vous
 
     }
 
@@ -177,8 +269,7 @@ public class gestionRDV {
 
         RendezVous newRDV = RDVs.get(x);
         newRDV.setDateHeure(RDV.getDateHeure());
-
-        Collections.sort(RDVs,Comparator.comparing(RendezVous::getDateHeure)); // trier les rendez-vous
+        Collections.sort(RDVs,Comparator.comparing(RendezVous::getDateHeure));
 
     }
 

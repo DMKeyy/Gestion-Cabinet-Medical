@@ -19,8 +19,9 @@ public class gestionDossierMedical {
     public void GestionDossierMedical (Patient patient){
         
         int choix;
+        System.out.println("\n\nGestion du dossier médical \n");
     do{
-        System.out.println("\nGestion du dossier médical : (1-3)");
+        System.out.println("Voulez vous:\n");
         System.out.println("1 . Ajouter une consultation");
         System.out.println("2 . Modifier une consultation");
         System.out.println("3 . Supprimer une consultation");
@@ -60,7 +61,7 @@ public class gestionDossierMedical {
             case 5:
                 break;
         }
-    }while(choix!=4);
+    }while(choix!=5);
     }
 
 
@@ -136,6 +137,7 @@ public class gestionDossierMedical {
             while (true) {
                 if (sc.hasNextInt()) {
                     duree = sc.nextInt();
+                    sc.nextLine();
                     if (duree<1) {
                         System.out.println("La durée doit être supérieure à 0.");
                     }
@@ -303,6 +305,7 @@ public class gestionDossierMedical {
             while (true) {
                 if (sc.hasNextInt()) {
                     jour = sc.nextInt();
+                    sc.nextLine();
                     if (jour<1 || jour>31) {
                         System.out.println("Le jour doit être compris entre 1 et 31.");
                     }
@@ -320,6 +323,7 @@ public class gestionDossierMedical {
             while (true) {
                 if (sc.hasNextInt()) {
                     mois = sc.nextInt();
+                    sc.nextLine();
                     if (mois<1 || mois>12) {
                         System.out.println("Le mois doit être compris entre 1 et 12.");
                     }

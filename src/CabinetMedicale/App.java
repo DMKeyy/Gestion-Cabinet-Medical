@@ -21,7 +21,7 @@ public class App {
 
         int choix;
 
-        System.out.println("Bienvenue dans le cabinet médicale\n\n");
+        System.out.println("\n\nBienvenue dans le cabinet médicale\n");
         do{
         System.out.println("choissisez une option : \n");
         System.out.println("1 . Gestion des patients");
@@ -36,6 +36,7 @@ public class App {
             while (true) {
                 if (sc.hasNextInt()) {
                     choix = sc.nextInt();
+                    sc.nextLine();
                     if (choix < 1 || choix > 4) {
                         System.out.println("L'entier dois etre entre 1 et 4.");
                     }

@@ -1,6 +1,7 @@
 package CabinetMedicale.gestion;
 
 import java.util.ArrayList;
+import java.util.Locale;
 import java.util.Scanner;
 
 import CabinetMedicale.models.Patient;
@@ -17,8 +18,9 @@ public class gestionPatient {
         public void GestionPatient() {
 
             int choix;
+            System.out.println("\n\nGestion des patients\n");
             do{
-            System.out.println("Voulez-vous : ");
+            System.out.println("Voulez-vous : \n");
             System.out.println("1 . Ajouter un Patient");
             System.out.println("2 . Modifier les information du Patient");
             System.out.println("3 . Supprimer un Patient");
@@ -88,7 +90,7 @@ public class gestionPatient {
 
 
     public void ajouterPatient() {
-
+        sc.useLocale(Locale.US);
 
         System.out.println("Entrer le nom du patient: ");
         String nom = sc.nextLine();
@@ -284,6 +286,8 @@ public class gestionPatient {
 
 
     public void modifierPoid(Patient patient){
+        sc.useLocale(Locale.US);
+        
         System.out.println("Entrer le nouveau poids : ");
         try {
             double poid = sc.nextDouble();
@@ -298,6 +302,8 @@ public class gestionPatient {
 
 
     public void modifierTaille(Patient patient){
+        sc.useLocale(Locale.US);
+
         System.out.println("Entrer la nouvelle taille : ");
         try {
             double taille = sc.nextDouble();
