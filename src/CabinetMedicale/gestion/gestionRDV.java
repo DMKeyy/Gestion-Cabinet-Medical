@@ -168,12 +168,23 @@ public class gestionRDV {
         String nom = sc.nextLine();
         System.out.println(Colors.BLUE + "Entrer le Prenom : " + Colors.RESET);
         String prenom = sc.nextLine();
-        System.out.println(Colors.BLUE + "Entrer le Numero de telephone : " + Colors.RESET);
-        String numero = sc.nextLine();
+        
+        String numeroDeTel;
+        do{
+            System.out.println(Colors.BLUE + "Entrer le numéro de téléphone du patient: " + Colors.RESET);
+            numeroDeTel = sc.nextLine();
+            if (numeroDeTel.matches("[0-9]+")) {
+                break;
+            }
+            else {
+                System.out.println(Colors.RED+"Erreur: Veuillez entrer un numéro de téléphone valide !"+Colors.RESET);
+            }
+        }while(true);
+
         System.out.println(Colors.BLUE + "Quel est la raison du Rendez-Vous : " + Colors.RESET);
         String pourquoi = sc.nextLine();
 
-        RendezVous RDV = new RendezVous(null, nom, prenom, numero, pourquoi);
+        RendezVous RDV = new RendezVous(null, nom, prenom, numeroDeTel, pourquoi);
 
         do {
             System.out.println(Colors.BLUE + "Entrer la date du rendez-vous : " + Colors.RESET);

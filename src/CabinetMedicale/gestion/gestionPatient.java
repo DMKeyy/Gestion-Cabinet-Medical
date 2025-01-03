@@ -99,11 +99,28 @@ public class gestionPatient {
         System.out.println(Colors.BLUE + "Entrer le prénom du patient: " + Colors.RESET);
         String prenom = sc.nextLine();
 
-        System.out.println(Colors.BLUE + "Entrer la date de naissance du patient: " + Colors.RESET);
-        String DateDeNaissance = sc.nextLine();
+        String DateDeNaissance;
+        do {
+            System.out.println(Colors.BLUE + "Entrer la date de naissance du patient: jj/mm/aaaa" + Colors.RESET);
+            DateDeNaissance = sc.nextLine();
+            if (DateDeNaissance.matches("[0-9]{2}/[0-9]{2}/[0-9]{4}")) {
+                break;
+            } else {
+                System.out.println(Colors.RED+"Erreur: Veuillez entrer une date valide. (jj/mm/aaaa)"+Colors.RESET);
+            }
+        } while (true);
 
-        System.out.println(Colors.BLUE + "Entrer le numéro de téléphone du patient: " + Colors.RESET);
-        String numeroDeTel = sc.nextLine();
+        String numeroDeTel;
+        do{
+            System.out.println(Colors.BLUE + "Entrer le numéro de téléphone du patient: " + Colors.RESET);
+            numeroDeTel = sc.nextLine();
+            if (numeroDeTel.matches("[0-9]+")) {
+                break;
+            }
+            else {
+                System.out.println(Colors.RED+"Erreur: Veuillez entrer un numéro de téléphone valide !"+Colors.RESET);
+            }
+        }while(true);
 
         System.out.println(Colors.BLUE + "Entrer l'adresse du patient: " + Colors.RESET);
         String adresse = sc.nextLine();
