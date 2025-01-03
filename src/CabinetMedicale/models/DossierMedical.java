@@ -1,9 +1,10 @@
 package CabinetMedicale.models;
 
 import java.util.ArrayList;
+import CabinetMedicale.Colors;
 
 public class DossierMedical {
-    
+
     private Patient patient;
     private ArrayList<consultation> consultations;
 
@@ -40,18 +41,16 @@ public class DossierMedical {
         }
 
 
-        
-    public void AfficherDossierMedical (){
-        System.out.println("--------------------Dossier Medical----------------------");
-        System.out.println("Nom et prenom : "+this.patient.getNom()+" "+this.patient.getPrenom());
-        System.out.println("Numero de dossier : "+this.patient.getNumeroDossier());
-        System.out.println("--------------------Consultations---------------------");
-        System.out.println("Nombre de consultations : "+this.consultations.size());
+    public void AfficherDossierMedical() {
+        System.out.println(Colors.BLUE + "--------------------Dossier Medical----------------------" + Colors.RESET);
+        System.out.println(Colors.BLUE + "Nom et prenom : " + Colors.RESET + this.patient.getNom() + " " + this.patient.getPrenom());
+        System.out.println(Colors.BLUE + "Numero de dossier : " + Colors.RESET + this.patient.getNumeroDossier());
+        System.out.println(Colors.BLUE + "--------------------Consultations---------------------" + Colors.RESET);
+        System.out.println(Colors.BLUE + "Nombre de consultations : " + Colors.RESET + this.consultations.size());
         for (consultation consultation : consultations) {
             consultation.AfficherConsultation();
-            
         }
-        System.out.println("--------------------------------------------------------");
+        System.out.println(Colors.BLUE + "--------------------------------------------------------" + Colors.RESET);
     }
 
     

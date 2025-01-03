@@ -3,8 +3,10 @@ package CabinetMedicale.models;
 import java.time.LocalDateTime;
 import java.util.ArrayList;
 import java.util.Scanner;
+import CabinetMedicale.Colors;
 
 public class RendezVous {
+
     Scanner sc = new Scanner(System.in);
 
     private LocalDateTime dateHeure;
@@ -88,10 +90,10 @@ public class RendezVous {
 
     public static boolean AjouterRDV(ArrayList<RendezVous> listeRDV,RendezVous RDV){ //// ajouter un intervale de 15min
         if (verifRDV(listeRDV,RDV.getDateHeure())) {
-            System.out.println("Date non disponible");
+            System.out.println(Colors.RED+"Date non disponible"+Colors.RESET);
             return false;
         }
-        System.out.println("Rendez vous ajouter");
+        System.out.println(Colors.GREEN+"Rendez vous ajouter"+Colors.RESET);
         listeRDV.add(RDV);
         listeRDV.sort((rdv1, rdv2) -> rdv1.getDateHeure().compareTo(rdv2.getDateHeure()));
         return true;
