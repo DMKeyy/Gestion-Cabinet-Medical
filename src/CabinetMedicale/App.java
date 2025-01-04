@@ -72,7 +72,7 @@ public class App {
     }
 
     private static void afficherBienvenue() {
-        System.out.println(Colors.GREEN + "==============================================");
+        System.out.println(Colors.GREEN + "\n==============================================");
         System.out.println("       BIENVENUE DANS LE CABINET MÉDICAL       ");
         System.out.println("==============================================\n" + Colors.RESET);
     }

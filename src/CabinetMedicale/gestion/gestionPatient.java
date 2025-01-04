@@ -64,7 +64,8 @@ public class gestionPatient {
             afficherPatients();
             break;
         case 5:
-            selectionnerPatient().afficherinfo();
+            Patient p = selectionnerPatient();
+            if (p != null) p.afficherinfo();
             break;
         case 6:
             break;

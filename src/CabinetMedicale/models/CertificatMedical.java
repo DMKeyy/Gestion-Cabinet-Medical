@@ -6,7 +6,7 @@ import CabinetMedicale.Colors;
 public class CertificatMedical {
     private String patientName;
     private String doctorName;
-    private LocalDate date;
+    private LocalDate date= LocalDate.now();
     private String reason;
     private int duration;
 
@@ -16,7 +16,6 @@ public class CertificatMedical {
     public CertificatMedical(Patient patientName, String doctorName, String reason, int duration) {
         this.patientName = patientName.getNom() + " " + patientName.getPrenom();
         this.doctorName = doctorName;
-        this.date = LocalDate.now();
         this.reason = reason;
         this.duration = duration;
     }

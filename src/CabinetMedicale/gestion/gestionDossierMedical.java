@@ -32,8 +32,8 @@ public class gestionDossierMedical {
 
             do { // Loop until a valid choice is made (Doit etre un entier entre 1 et 5)
                 while (true) {
+                    System.out.println(Colors.YELLOW + "> Veuillez saisir votre choix (1-5) : " + Colors.RESET);
                     if (sc.hasNextInt()) {
-                        System.out.println(Colors.YELLOW + "> Veuillez saisir votre choix (1-5) : " + Colors.RESET);
                         choix = sc.nextInt();
                         sc.nextLine();
                         if (choix < 1 || choix > 5) {
