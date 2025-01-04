@@ -23,8 +23,8 @@ public class gestionPatient {
         
         do{
         System.out.println(Colors.CYAN+ "\n======= Gestion des patients =======\n" + Colors.RESET);
-        System.out.println(Colors.BLUE+"Que souhaitez-vous faire ?" );
-        System.out.println("1 . Ajouter un Patient");
+        System.out.println(Colors.GREEN+"Que souhaitez-vous faire ?" + Colors.RESET);
+        System.out.println(Colors.BLUE+"1 . Ajouter un Patient");
         System.out.println("2 . Modifier les information du Patient");
         System.out.println("3 . Supprimer un Patient");
         System.out.println("4 . Afficher les informations des Patients");

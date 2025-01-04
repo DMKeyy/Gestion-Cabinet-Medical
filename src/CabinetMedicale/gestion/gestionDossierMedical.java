@@ -21,8 +21,8 @@ public class gestionDossierMedical {
         
         do {
             System.out.println(Colors.CYAN + "======= Gestion du dossier médical =======\n" + Colors.RESET);
-            System.out.println(Colors.BLUE + "Que souhaitez-vous faire ?");
-            System.out.println("1 . Ajouter une consultation");
+            System.out.println(Colors.GREEN + "Que souhaitez-vous faire ?"+Colors.RESET);
+            System.out.println(Colors.BLUE+"1 . Ajouter une consultation");
             System.out.println("2 . Modifier une consultation");
             System.out.println("3 . Supprimer une consultation");
             System.out.println("4 . Afficher le dossier médical" + Colors.RESET);
@@ -142,7 +142,7 @@ public class gestionDossierMedical {
 
         certificatMedical.setPatientName(patient.getNom() + " " + patient.getPrenom());
 
-        System.out.println("Entrer le nom du médecin : ");
+        System.out.println(Colors.BLUE+"Entrer le nom du médecin : "+Colors.RESET);
         certificatMedical.setDoctorName(sc.nextLine());
 
         Consultation.setCertificatMedical(certificatMedical);

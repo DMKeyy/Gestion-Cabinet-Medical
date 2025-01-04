@@ -73,20 +73,20 @@ public class Ordonnance {
 
     public void setNomMedecin(String nomMedecin) {
         this.nomMedecin = nomMedecin;
-    }
-
-    public void generateDocument() {
-        System.out.println(Colors.YELLOW + "---Ordonnance Médicale---\n");
-        System.out.println("Date : " + Colors.RESET + dateOrdonnance + "\n");
-        System.out.println(Colors.YELLOW + "Patient : " + Colors.RESET + nom + " " + prenom + "\n");
-        System.out.println(Colors.YELLOW + "Docteur : " + Colors.RESET + nomMedecin + "\n");
-        for (String dose : doses) {
-            System.out.println(Colors.YELLOW + "Medicament : " + Colors.RESET + medicament.get(doses.indexOf(dose)) + "   " + dose);
         }
-        System.out.println(Colors.YELLOW + "-------------------------\n" + Colors.RESET);
-    }
 
-    public void AjouterMedicament() {
+        public void generateDocument() {
+        System.out.println(Colors.CYAN + "---Ordonnance Médicale---\n");
+        System.out.println("Date : " + Colors.RESET + dateOrdonnance + "\n");
+        System.out.println(Colors.CYAN + "Patient : " + Colors.RESET + nom + " " + prenom + "\n");
+        System.out.println(Colors.CYAN + "Docteur : " + Colors.RESET + nomMedecin + "\n");
+        for (String dose : doses) {
+            System.out.println(Colors.CYAN + "Medicament : " + Colors.RESET + medicament.get(doses.indexOf(dose)) + "   " + dose);
+        }
+        System.out.println(Colors.CYAN + "-------------------------\n" + Colors.RESET);
+        }
+
+        public void AjouterMedicament() {
         System.out.println(Colors.YELLOW + "Combien de medicament voulez vous ajouter ?" + Colors.RESET);
         int nbMedicament;
         do {

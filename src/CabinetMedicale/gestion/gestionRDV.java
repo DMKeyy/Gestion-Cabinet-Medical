@@ -28,8 +28,8 @@ public class gestionRDV {
         
         do {
             System.out.println(Colors.CYAN + "\n======= Gestion des rendez-vous =======\n" + Colors.RESET);
-            System.out.println(Colors.BLUE + "Que souhaitez-vous faire ?");
-            System.out.println("1. Ajouter un Rendez-vous");
+            System.out.println(Colors.GREEN + "Que souhaitez-vous faire ?"+Colors.RESET);
+            System.out.println(Colors.BLUE+"1. Ajouter un Rendez-vous") ;
             System.out.println("2. Annuler un Rendez-vous");
             System.out.println("3. Modifier un Rendez-vous");
             System.out.println("4. Afficher les Rendez-vous" + Colors.RESET);

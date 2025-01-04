@@ -61,12 +61,12 @@ public class CertificatMedical {
     }
 
     public void generateDocument() {
-        System.out.println(Colors.YELLOW + "---Certificat Medical---" + Colors.RESET);
-        System.out.println(Colors.YELLOW + "Nom et prenom du patient : " + Colors.RESET+ this.patientName );
-        System.out.println(Colors.YELLOW + "Nom du medecin : "+Colors.RESET + this.doctorName);
-        System.out.println(Colors.YELLOW + "Date : " + Colors.RESET+ this.date);
-        System.out.println(Colors.YELLOW + "Raison : " + Colors.RESET+ this.reason );
-        System.out.println(Colors.YELLOW + "Duree de l'arret de travail : "+ Colors.RESET + this.duration +Colors.YELLOW + " jours"+ Colors.RESET);
-        System.out.println(Colors.YELLOW + "-------------------------" + Colors.RESET);
+        System.out.println(Colors.CYAN + "---Certificat Medical---" + Colors.RESET);
+        System.out.println(Colors.CYAN + "Nom et prenom du patient : " + Colors.RESET+ this.patientName );
+        System.out.println(Colors.CYAN + "Nom du medecin : "+Colors.RESET + this.doctorName);
+        System.out.println(Colors.CYAN + "Date : " + Colors.RESET+ this.date);
+        System.out.println(Colors.CYAN + "Raison : " + Colors.RESET+ this.reason );
+        System.out.println(Colors.CYAN + "Duree de l'arret de travail : "+ Colors.RESET + this.duration +Colors.CYAN + " jours"+ Colors.RESET);
+        System.out.println(Colors.CYAN + "-------------------------" + Colors.RESET);
     }
 }
