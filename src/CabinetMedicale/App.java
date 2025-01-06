@@ -40,7 +40,7 @@ public class App {
                         }
                         break;
                     } else {
-                        System.out.println(Colors.RED + "Entré invalide. Entrez un entier entre 1 et 4." + Colors.RESET);
+                        System.out.println(Colors.RED + "Entrée invalide. Entrez un entier entre 1 et 4." + Colors.RESET);
                         sc.next(); // Clear invalid input
                     }
                 }

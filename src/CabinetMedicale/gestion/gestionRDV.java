@@ -164,14 +164,14 @@ public class gestionRDV {
     }
 
     public void ajouterRDV() {
-        System.out.println(Colors.BLUE + "Entrer le Nom : " + Colors.RESET);
+        System.out.println(Colors.BLUE + "Entrez le Nom : " + Colors.RESET);
         String nom = sc.nextLine();
-        System.out.println(Colors.BLUE + "Entrer le Prenom : " + Colors.RESET);
+        System.out.println(Colors.BLUE + "Entrez le Prenom : " + Colors.RESET);
         String prenom = sc.nextLine();
         
         String numeroDeTel;
         do{
-            System.out.println(Colors.BLUE + "Entrer le numéro de téléphone du patient: " + Colors.RESET);
+            System.out.println(Colors.BLUE + "Entrez le numéro de téléphone du patient: " + Colors.RESET);
             numeroDeTel = sc.nextLine();
             if (numeroDeTel.matches("[0-9]+")) {
                 break;
@@ -187,7 +187,7 @@ public class gestionRDV {
         RendezVous RDV = new RendezVous(null, nom, prenom, numeroDeTel, pourquoi);
 
         do {
-            System.out.println(Colors.BLUE + "Entrer la date du rendez-vous : " + Colors.RESET);
+            System.out.println(Colors.BLUE + "Entrez la date du rendez-vous : " + Colors.RESET);
             RemplireDate(RDV);
         } while (!RendezVous.AjouterRDV(RDVs, RDV));
     }

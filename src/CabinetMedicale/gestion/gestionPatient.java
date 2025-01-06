@@ -25,7 +25,7 @@ public class gestionPatient {
         System.out.println(Colors.CYAN+ "\n======= Gestion des patients =======\n" + Colors.RESET);
         System.out.println(Colors.GREEN+"Que souhaitez-vous faire ?" + Colors.RESET);
         System.out.println(Colors.BLUE+"1 . Ajouter un Patient");
-        System.out.println("2 . Modifier les information du Patient");
+        System.out.println("2 . Modifier les informations du Patient");
         System.out.println("3 . Supprimer un Patient");
         System.out.println("4 . Afficher les informations des Patients");
         System.out.println("5 . Afficher les informations d'un seul patient"+Colors.RESET);
@@ -102,7 +102,7 @@ public class gestionPatient {
 
         String DateDeNaissance;
         do {
-            System.out.println(Colors.BLUE + "Entrer la date de naissance du patient: jj/mm/aaaa" + Colors.RESET);
+            System.out.println(Colors.BLUE + "Entrez la date de naissance du patient: jj/mm/aaaa" + Colors.RESET);
             DateDeNaissance = sc.nextLine();
             if (DateDeNaissance.matches("[0-9]{2}/[0-9]{2}/[0-9]{4}")) {
                 break;
@@ -113,7 +113,7 @@ public class gestionPatient {
 
         String numeroDeTel;
         do{
-            System.out.println(Colors.BLUE + "Entrer le numéro de téléphone du patient: " + Colors.RESET);
+            System.out.println(Colors.BLUE + "Entrez le numéro de téléphone du patient: " + Colors.RESET);
             numeroDeTel = sc.nextLine();
             if (numeroDeTel.matches("[0-9]+")) {
                 break;
@@ -123,10 +123,10 @@ public class gestionPatient {
             }
         }while(true);
 
-        System.out.println(Colors.BLUE + "Entrer l'adresse du patient: " + Colors.RESET);
+        System.out.println(Colors.BLUE + "Entrez l'adresse du patient: " + Colors.RESET);
         String adresse = sc.nextLine();
 
-        System.out.println(Colors.BLUE + "Entrer le poids du patient: (en kg XX.xx)" + Colors.RESET);
+        System.out.println(Colors.BLUE + "Entrez le poids du patient: (en kg XX.xx)" + Colors.RESET);
 
         double poid=0;
         do{
@@ -145,7 +145,7 @@ public class gestionPatient {
             }
         }while(poid<=0);
 
-        System.out.println(Colors.BLUE+"Entrer la taille du patient: (en mètres X.xx)"+Colors.RESET);
+        System.out.println(Colors.BLUE+"Entrerz la taille du patient: (en mètres X.xx)"+Colors.RESET);
         double taille =0;
 
         do{
@@ -167,7 +167,7 @@ public class gestionPatient {
 
         boolean fin = false;
         
-        System.out.println(Colors.BLUE+"Entrer les antécédents médicaux du patient: (si vous avez fini entrer 'fin')"+Colors.RESET);
+        System.out.println(Colors.BLUE+"Entrez les antécédents médicaux du patient: (si vous avez fini entrer 'fin')"+Colors.RESET);
         ArrayList<String> AntecedentsMedicaux = new ArrayList<String>();
         do {
             String Antecedent = sc.nextLine();
@@ -180,7 +180,7 @@ public class gestionPatient {
 
         fin = false;
         
-        System.out.println(Colors.BLUE+"Entrer les antécédents chirurgicaux du patient: (si vous avez fini entrer 'fin')"+Colors.RESET);
+        System.out.println(Colors.BLUE+"Entrez les antécédents chirurgicaux du patient: (si vous avez fini entrer 'fin')"+Colors.RESET);
         ArrayList<String> AntecedentsChirurgicaux = new ArrayList<String>();
         do {
             String Antecedent = sc.nextLine();
@@ -266,25 +266,25 @@ public class gestionPatient {
     }
 
     public void modifierNom(Patient patient){
-        System.out.println(Colors.BLUE+"Entrer le nouveau nom : "+Colors.RESET);
+        System.out.println(Colors.BLUE+"Entrez le nouveau nom : "+Colors.RESET);
         String nom = sc.nextLine();
         patient.setNom(nom);
     }
 
     public void modifierPrenom(Patient patient){
-        System.out.println(Colors.BLUE+"Entrer le nouveau prénom : "+Colors.RESET);
+        System.out.println(Colors.BLUE+"Entrez le nouveau prénom : "+Colors.RESET);
         String prenom = sc.nextLine();
         patient.setPrenom(prenom);
     }
 
     public void modifierDateDeNaissance(Patient patient){
-        System.out.println(Colors.BLUE+"Entrer la nouvelle date de naissance : "+Colors.RESET);
+        System.out.println(Colors.BLUE+"Entrez la nouvelle date de naissance : "+Colors.RESET);
         String DateDeNaissance = sc.nextLine();
         patient.setDateDeNaissance(DateDeNaissance);
     }
 
     public void modifierAdresse(Patient patient){
-        System.out.println(Colors.BLUE+"Entrer la nouvelle adresse : "+Colors.RESET);
+        System.out.println(Colors.BLUE+"Entrez la nouvelle adresse : "+Colors.RESET);
         String adresse = sc.nextLine();
         patient.setAdresse(adresse);
     }
@@ -292,7 +292,7 @@ public class gestionPatient {
     public void modifierPoid(Patient patient){
         sc.useLocale(Locale.US);
         
-        System.out.println(Colors.BLUE+"Entrer le nouveau poids : "+Colors.RESET);
+        System.out.println(Colors.BLUE+"Entrez le nouveau poids : "+Colors.RESET);
         try {
             double poid = sc.nextDouble();
             patient.setPoid(poid);
@@ -305,7 +305,7 @@ public class gestionPatient {
     public void modifierTaille(Patient patient){
         sc.useLocale(Locale.US);
 
-        System.out.println(Colors.BLUE+"Entrer la nouvelle taille : "+Colors.RESET);
+        System.out.println(Colors.BLUE+"Entrez la nouvelle taille : "+Colors.RESET);
         try {
             double taille = sc.nextDouble();
             patient.setTaille(taille);

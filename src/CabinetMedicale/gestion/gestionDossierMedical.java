@@ -104,7 +104,7 @@ public class gestionDossierMedical {
         int nb = sc.nextInt();
         sc.nextLine();
         for (int i = 0; i < nb; i++) {
-            System.out.println(Colors.BLUE + "Entrer le nom du médicaments : " + Colors.RESET);
+            System.out.println(Colors.BLUE + "Entrer le nom du médicament : " + Colors.RESET);
             ordonnance.getMedicament().add(sc.nextLine());
             System.out.println(Colors.BLUE + "Entrer la dose : " + Colors.RESET);
             ordonnance.getDoses().add(sc.nextLine());
