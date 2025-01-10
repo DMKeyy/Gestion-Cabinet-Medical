@@ -2,7 +2,7 @@
 - **Drive contenant le rapport et le ppt**:
 https://drive.google.com/drive/folders/1hRzR6NZw8QMh4pNEDSHgpos_6FFWFcKp?usp=sharing
 - **Version Interface graphique toujours en test** : 
-https://github.com/DMKeyy/GCM-avecInterface
+https://github.com/DMKeyy/GCM-Interface
 ## Overview
 
 This project is a Java application for managing a medical office. It includes functionalities for managing patients, appointments, and medical records.
