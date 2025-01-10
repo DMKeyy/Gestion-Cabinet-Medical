@@ -1,18 +1,33 @@
-## Getting Started
+# Gestion Cabinet Médical
 
-Welcome to the VS Code Java world. Here is a guideline to help you get started to write Java code in Visual Studio Code.
+## Overview
+
+This project is a Java application for managing a medical office. It includes functionalities for managing patients, appointments, and medical records.
+
+## Features
+
+- **Patient Management**: Add, modify, delete, and view patient information.
+- **Appointment Management**: Schedule, modify, and cancel appointments.
+- **Medical Record Management**: Add, modify, and view consultations, prescriptions, and medical certificates.
 
 ## Folder Structure
 
-The workspace contains two folders by default, where:
+The workspace contains the following folders:
 
-- `src`: the folder to maintain sources
-- `lib`: the folder to maintain dependencies
+- `src`: Contains the source code of the application.
+  - `CabinetMedicale`: Main package containing the application entry point and utility classes.
+  - `gestion`: Package containing classes for managing patients, appointments, and medical records.
+  - `models`: Package containing data models such as `Patient`, `Consultation`, `Ordonnance`, and `CertificatMedical`.
+- `lib`: Folder to maintain dependencies.
+- `bin`: Folder where compiled output files are generated.
 
-Meanwhile, the compiled output files will be generated in the `bin` folder by default.
+## Installation
 
-> If you want to customize the folder structure, open `.vscode/settings.json` and update the related settings there.
-
-## Dependency Management
-
-The `JAVA PROJECTS` view allows you to manage your dependencies. More details can be found [here](https://github.com/microsoft/vscode-java-dependency#manage-dependencies).
+1. Clone the repository to your local machine.
+2. Navigate to the project directory.
+3. Compile the source code:
+   ```bash
+   javac -d bin src/**/*.java
+4. Run the application:
+  ```bash
+  java -cp bin CabinetMedicale.Main
