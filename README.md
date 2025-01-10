@@ -21,6 +21,12 @@ The workspace contains the following folders:
 - `lib`: Folder to maintain dependencies.
 - `bin`: Folder where compiled output files are generated.
 
+### Prerequisites
+
+- Java 17 or higher
+- A Java IDE (e.g., Visual Studio Code, IntelliJ IDEA, Eclipse)
+
+
 ## Installation
 
 1. Clone the repository to your local machine.
@@ -29,5 +35,5 @@ The workspace contains the following folders:
    ```bash
    javac -d bin src/**/*.java
 4. Run the application:
-  ```bash
-  java -cp bin CabinetMedicale.Main
+   ```bash
+   java -cp bin CabinetMedicale.Main
