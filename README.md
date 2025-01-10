@@ -1,7 +1,7 @@
 # Gestion Cabinet Médical
 - **Drive contenant le rapport et le ppt**:
 https://drive.google.com/drive/folders/1hRzR6NZw8QMh4pNEDSHgpos_6FFWFcKp?usp=sharing
-- **Version Interface graphique toujour en test** : 
+- **Version Interface graphique toujours en test** : 
 https://github.com/DMKeyy/GCM-avecInterface
 ## Overview
 
