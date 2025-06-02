@@ -4,10 +4,6 @@
 ![Status](https://img.shields.io/badge/Status-In%20Development-yellow)
 ![License](https://img.shields.io/badge/License-MIT-blue)
 
-## 📚 Resources
-- [Project Documentation & Presentations](https://drive.google.com/drive/folders/1hRzR6NZw8QMh4pNEDSHgpos_6FFWFcKp?usp=sharing)
-- [GUI Version (Beta)](https://github.com/DMKeyy/GCM-Interface)
-
 ## 🎯 Overview
 
 A robust Java-based medical office management system designed to streamline healthcare administration, patient management, and medical record keeping. This application provides healthcare professionals with tools to efficiently manage their practice while maintaining patient data security and accessibility.
@@ -106,10 +102,6 @@ src/
 - Multi-language support
 - Cloud backup integration
 - Electronic prescription system
-
-## 👥 Contributors
-
-- Interface Version: [DMKeyy](https://github.com/DMKeyy)
 
 ## 📝 License
 
