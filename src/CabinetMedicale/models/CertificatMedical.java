@@ -1,7 +1,6 @@
 package CabinetMedicale.models;
 
 import java.time.LocalDate;
-import CabinetMedicale.Colors;
 
 public class CertificatMedical {
     private String patientName;

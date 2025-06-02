@@ -5,7 +5,7 @@ import java.util.Locale;
 import java.util.Scanner;
 
 import CabinetMedicale.models.Patient;
-import CabinetMedicale.Colors;
+import CabinetMedicale.models.Colors;
 
 public class gestionPatient {
     Scanner sc = new Scanner(System.in);

@@ -1,42 +1,122 @@
-# Gestion Cabinet Médical
-- **Drive contenant le rapport et le ppt**:
-https://drive.google.com/drive/folders/1hRzR6NZw8QMh4pNEDSHgpos_6FFWFcKp?usp=sharing
-- **Version Interface graphique toujours en test** : 
-https://github.com/DMKeyy/GCM-Interface
-## Overview
+# 🏥 Gestion Cabinet Médical (Medical Office Management System)
 
-This project is a Java application for managing a medical office. It includes functionalities for managing patients, appointments, and medical records.
+![Java](https://img.shields.io/badge/Java-17%2B-orange)
+![Status](https://img.shields.io/badge/Status-In%20Development-yellow)
+![License](https://img.shields.io/badge/License-MIT-blue)
 
-## Features
+## 📚 Resources
+- [Project Documentation & Presentations](https://drive.google.com/drive/folders/1hRzR6NZw8QMh4pNEDSHgpos_6FFWFcKp?usp=sharing)
+- [GUI Version (Beta)](https://github.com/DMKeyy/GCM-Interface)
 
-- **Patient Management**: Add, modify, delete, and view patient information.
-- **Appointment Management**: Schedule, modify, and cancel appointments.
-- **Medical Record Management**: Add, modify, and view consultations, prescriptions, and medical certificates.
+## 🎯 Overview
 
-## Folder Structure
+A robust Java-based medical office management system designed to streamline healthcare administration, patient management, and medical record keeping. This application provides healthcare professionals with tools to efficiently manage their practice while maintaining patient data security and accessibility.
 
-The workspace contains the following folders:
+## ✨ Key Features
 
-- `src`: Contains the source code of the application.
-  - `CabinetMedicale`: Main package containing the application entry point and utility classes.
-  - `gestion`: Package containing classes for managing patients, appointments, and medical records.
-  - `models`: Package containing data models such as `Patient`, `Consultation`, `Ordonnance`, and `CertificatMedical`.
-- `lib`: Folder to maintain dependencies.
-- `bin`: Folder where compiled output files are generated.
+### 👤 Patient Management
+- Create and maintain detailed patient profiles
+- Update patient information in real-time
+- Search and filter patient records
+- Track patient history and medical antecedents
+- Manage patient contact information
 
-### Prerequisites
+### 📅 Appointment Management
+- Schedule new appointments with conflict prevention
+- Modify existing appointments
+- Cancel and reschedule functionality
+- View daily/weekly appointment calendar
+- Smart time slot management
 
-- Java 17 or higher
-- A Java IDE (e.g., Visual Studio Code, IntelliJ IDEA, Eclipse)
+### 📋 Medical Records Management
+- Generate and maintain digital medical records
+- Create and store consultation notes
+- Issue digital prescriptions (`Ordonnance`)
+- Generate medical certificates (`CertificatMedical`)
+- Track patient consultation history
 
+## 🔧 Technical Architecture
 
-## Installation
+### Project Structure
+```
+src/
+├── CabinetMedicale/
+│   ├── App.java                # Application entry point
+│   ├── gestion/                # Management modules
+│   │   ├── gestionDossierMedical.java
+│   │   ├── gestionPatient.java
+│   │   └── gestionRDV.java
+│   └── models/                 # Data models
+│       ├── CertificatMedical.java
+│       ├── Colors.java
+│       ├── consultation.java
+│       ├── DossierMedical.java
+│       ├── Ordonnance.java
+│       ├── Patient.java
+│       └── RendezVous.java
+```
 
-1. Clone the repository to your local machine.
-2. Navigate to the project directory.
-3. Compile the source code:
-   ```bash
+## 🛠️ Technologies & Tools
+
+- **Core Technology**: Java 17+
+- **Architecture**: Object-Oriented Design
+- **Data Storage**: File-based persistence
+- **User Interface**: Console-based (GUI version in development)
+
+## ⚙️ Prerequisites
+
+- Java Development Kit (JDK) 17 or higher
+- Any modern Java IDE:
+  - Visual Studio Code
+  - IntelliJ IDEA
+  - Eclipse
+
+## 📥 Installation
+
+1. Clone the repository:
+   ```powershell
+   git clone <repository-url>
+   cd Gestion-Cabinet-Medical
+   ```
+
+2. Compile the source code:
+   ```powershell
    javac -d bin src/**/*.java
-4. Run the application:
-   ```bash
-   java -cp bin CabinetMedicale.Main
+   ```
+
+3. Run the application:
+   ```powershell
+   java -cp bin CabinetMedicale.App
+   ```
+
+## 🚀 Getting Started
+
+1. Launch the application using the steps above
+2. Navigate through the main menu options:
+   - Patient Management
+   - Appointment Scheduling
+   - Medical Records
+   - Consultation Management
+
+## 🔄 Future Enhancements
+
+- Complete GUI implementation
+- Database integration for improved data management
+- Enhanced reporting capabilities
+- Multi-language support
+- Cloud backup integration
+- Electronic prescription system
+
+## 👥 Contributors
+
+- Interface Version: [DMKeyy](https://github.com/DMKeyy)
+
+## 📝 License
+
+This project is licensed under the MIT License - see the LICENSE file for details.
+
+---
+
+<p align="center">
+  Made with ❤️ for better healthcare management
+</p>

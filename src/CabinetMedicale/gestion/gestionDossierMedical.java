@@ -9,7 +9,7 @@ import CabinetMedicale.models.DossierMedical;
 import CabinetMedicale.models.Ordonnance;
 import CabinetMedicale.models.Patient;
 import CabinetMedicale.models.consultation;
-import CabinetMedicale.Colors;
+import CabinetMedicale.models.Colors;
 
 public class gestionDossierMedical {
     Scanner sc = new Scanner(System.in);

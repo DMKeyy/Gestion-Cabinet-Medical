@@ -5,6 +5,7 @@ import java.util.Scanner;
 import CabinetMedicale.gestion.gestionDossierMedical;
 import CabinetMedicale.gestion.gestionPatient;
 import CabinetMedicale.gestion.gestionRDV;
+import CabinetMedicale.models.Colors;
 import CabinetMedicale.models.Patient;
 
 public class App {

@@ -3,7 +3,6 @@ package CabinetMedicale.models;
 import java.time.LocalDate;
 import java.util.ArrayList;
 import java.util.Scanner;
-import CabinetMedicale.Colors;
 
 public class Ordonnance {
     private Scanner sc = new Scanner(System.in);

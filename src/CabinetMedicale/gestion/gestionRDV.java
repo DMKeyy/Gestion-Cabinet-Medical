@@ -7,7 +7,7 @@ import java.util.Comparator;
 import java.util.Scanner;
 
 import CabinetMedicale.models.RendezVous;
-import CabinetMedicale.Colors;
+import CabinetMedicale.models.Colors;
 
 
 public class gestionRDV {

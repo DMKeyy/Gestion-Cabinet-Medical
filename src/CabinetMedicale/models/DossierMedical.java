@@ -1,7 +1,6 @@
 package CabinetMedicale.models;
 
 import java.util.ArrayList;
-import CabinetMedicale.Colors;
 
 public class DossierMedical {
 

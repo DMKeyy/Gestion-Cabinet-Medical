@@ -1,7 +1,6 @@
 package CabinetMedicale.models;
 
 import java.util.*;
-import CabinetMedicale.Colors;
 
 public class Patient {
     private String numeroDeTel;
